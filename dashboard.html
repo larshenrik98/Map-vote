@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mercy Rust — Bot Dashboard</title>
+  <title>Mercy Rust â€” Bot Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
@@ -24,10 +24,10 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; min-height: 100vh; }
 
-    /* ── Layout ── */
+    /* â”€â”€ Layout â”€â”€ */
     .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
 
-    /* ── Sidebar ── */
+    /* â”€â”€ Sidebar â”€â”€ */
     .sidebar {
       background: var(--surface);
       border-right: 1px solid var(--border);
@@ -69,17 +69,17 @@
     .status-text { font-size: 13px; font-weight: 500; }
     .status-sub { font-size: 11px; color: var(--muted); }
 
-    /* ── Main ── */
+    /* â”€â”€ Main â”€â”€ */
     .main { padding: 32px; overflow-y: auto; }
     .page { display: none; }
     .page.active { display: block; }
 
-    /* ── Page Header ── */
+    /* â”€â”€ Page Header â”€â”€ */
     .page-header { margin-bottom: 28px; }
     .page-title { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
     .page-sub { font-size: 14px; color: var(--muted); margin-top: 4px; }
 
-    /* ── Stats Grid ── */
+    /* â”€â”€ Stats Grid â”€â”€ */
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 28px; }
     .stat-card {
       background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
@@ -95,7 +95,7 @@
       background: linear-gradient(135deg, transparent, rgba(255,102,0,0.1));
     }
 
-    /* ── Cards ── */
+    /* â”€â”€ Cards â”€â”€ */
     .card {
       background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
       padding: 24px; margin-bottom: 20px;
@@ -103,7 +103,7 @@
     .card-title { font-size: 15px; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
     .card-title span { color: var(--muted); font-size: 12px; font-weight: 400; }
 
-    /* ── Active Vote ── */
+    /* â”€â”€ Active Vote â”€â”€ */
     .active-vote-banner {
       background: linear-gradient(135deg, rgba(255,102,0,0.15), rgba(255,153,0,0.08));
       border: 1px solid rgba(255,102,0,0.4);
@@ -121,7 +121,7 @@
     .btn-primary { background: var(--accent); color: white; }
     .btn-primary:hover { background: var(--accent2); }
 
-    /* ── Vote Bars ── */
+    /* â”€â”€ Vote Bars â”€â”€ */
     .vote-maps { display: grid; gap: 14px; }
     .vote-map-row { }
     .vote-map-header { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
@@ -158,7 +158,7 @@
     .archive-note .note-body { font-size: 13px; white-space: pre-wrap; line-height: 1.5; }
     .archive-note .note-meta { font-size: 11px; color: var(--muted); margin-top: 8px; }
 
-    /* ── Map Cards ── */
+    /* â”€â”€ Map Cards â”€â”€ */
     .map-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
     .map-card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
@@ -172,7 +172,7 @@
     .map-card a { color: var(--accent); font-size: 12px; text-decoration: none; }
     .map-card a:hover { text-decoration: underline; }
 
-    /* ── History Table ── */
+    /* â”€â”€ History Table â”€â”€ */
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th { text-align: left; padding: 10px 14px; color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); }
@@ -183,7 +183,7 @@
     .badge-active { background: rgba(0,232,122,0.15); color: var(--green); }
     .badge-ended { background: rgba(107,114,128,0.2); color: var(--muted); }
 
-    /* ── Events ── */
+    /* â”€â”€ Events â”€â”€ */
     .event-list { display: flex; flex-direction: column; gap: 8px; }
     .event-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: var(--surface); border-radius: 8px; }
     .event-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
@@ -194,15 +194,73 @@
     .event-msg { font-size: 13px; }
     .event-time { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
-    /* ── Countdown ── */
+    /* â”€â”€ Countdown â”€â”€ */
     .countdown { font-size: 22px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
 
-    /* ── No vote ── */
+    /* â”€â”€ Ban Approvals â”€â”€ */
+    .bak-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .bak-tab {
+      padding: 8px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; cursor: pointer;
+      background: var(--surface); border: 1px solid var(--border); color: var(--muted); transition: all 0.15s;
+    }
+    .bak-tab:hover { color: var(--text); border-color: rgba(255,255,255,0.12); }
+    .bak-tab.active { background: rgba(255,102,0,0.15); border-color: rgba(255,102,0,0.45); color: var(--accent); }
+    .bak-tab .count { opacity: 0.75; margin-left: 4px; }
+    .bak-layout { display: grid; grid-template-columns: 320px 1fr; gap: 20px; align-items: start; }
+    @media (max-width: 1100px) { .bak-layout { grid-template-columns: 1fr; } }
+    .bak-staff-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 14px 16px; margin-bottom: 10px; cursor: pointer; transition: all 0.15s;
+    }
+    .bak-staff-card:hover { border-color: rgba(255,102,0,0.35); }
+    .bak-staff-card.selected { border-color: var(--accent); background: rgba(255,102,0,0.06); }
+    .bak-staff-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 10px; }
+    .bak-staff-name { font-size: 14px; font-weight: 700; }
+    .bak-staff-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .bak-mini-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 10px; }
+    .bak-mini-stat { text-align: center; background: var(--bg); border-radius: 8px; padding: 6px 4px; }
+    .bak-mini-stat .v { font-size: 15px; font-weight: 800; line-height: 1; }
+    .bak-mini-stat .l { font-size: 9px; color: var(--muted); text-transform: uppercase; margin-top: 3px; letter-spacing: 0.04em; }
+    .bak-rate-bar { height: 6px; background: var(--bg); border-radius: 999px; overflow: hidden; }
+    .bak-rate-fill { height: 100%; background: linear-gradient(90deg, var(--green), #00cc66); border-radius: 999px; }
+    .bak-request-row { border-bottom: 1px solid rgba(255,255,255,0.04); padding: 14px 0; }
+    .bak-request-row:last-child { border-bottom: none; }
+    .bak-request-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+    .bak-request-player { font-size: 14px; font-weight: 700; }
+    .bak-request-player a { color: var(--blue); text-decoration: none; }
+    .bak-request-player a:hover { text-decoration: underline; }
+    .bak-request-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
+    .bak-status-pill { padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .bak-status-pill.pending { background: rgba(255,153,0,0.15); color: var(--accent2); }
+    .bak-status-pill.approved { background: rgba(0,232,122,0.15); color: var(--green); }
+    .bak-status-pill.denied { background: rgba(255,68,85,0.15); color: var(--red); }
+    .bak-detail-box {
+      margin-top: 10px; padding: 10px 12px; background: var(--bg); border-radius: 8px;
+      font-size: 12px; line-height: 1.55; color: var(--muted);
+    }
+    .bak-detail-box strong { color: var(--text); }
+    .bak-toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; align-items: center; }
+    .bak-search {
+      flex: 1; min-width: 200px; padding: 9px 12px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text); font-size: 13px; font-family: inherit;
+    }
+    .bak-search:focus { outline: none; border-color: var(--accent); }
+    .bak-section-toggle {
+      font-size: 13px; color: var(--muted); cursor: pointer; user-select: none;
+      display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+    }
+    .bak-section-toggle:hover { color: var(--text); }
+    .bak-keys-panel { display: none; }
+    .bak-keys-panel.open { display: block; }
+    .stat-card.clickable { cursor: pointer; }
+    .stat-card.clickable.active { border-color: var(--accent); box-shadow: 0 0 0 1px rgba(255,102,0,0.25); }
+
+    /* â”€â”€ No vote â”€â”€ */
     .empty-state { text-align: center; padding: 48px 20px; color: var(--muted); }
     .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
     .empty-state p { font-size: 14px; }
 
-    /* ── Console ── */
+    /* â”€â”€ Console â”€â”€ */
     .console-wrap {
       background: #0a0b10; border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
     }
@@ -231,14 +289,14 @@
     .state-starting, .state-stopping { background: rgba(255,153,0,0.15); color: var(--accent2); }
     .state-unknown { background: rgba(107,114,128,0.2); color: var(--muted); }
 
-    /* ── Responsive ── */
+    /* â”€â”€ Responsive â”€â”€ */
     @media (max-width: 768px) {
       .layout { grid-template-columns: 1fr; }
       .sidebar { display: none; }
       .main { padding: 16px; }
     }
 
-    /* ── AI Chat Assistant ── */
+    /* â”€â”€ AI Chat Assistant â”€â”€ */
     .ai-chat-btn {
       position: fixed; bottom: 24px; right: 24px; z-index: 10000;
       width: 56px; height: 56px; border-radius: 50%;
@@ -408,56 +466,68 @@
 
     <div class="nav-label">Navigation</div>
     <div class="nav-item active" onclick="showPage('overview')" id="nav-overview">
-      <span class="icon">📊</span> Overview
+      <span class="icon">ðŸ“Š</span> Overview
     </div>
     <div class="nav-item" onclick="showPage('mapvote')" id="nav-mapvote">
-      <span class="icon">🗺️</span> Map Vote
+      <span class="icon">ðŸ—ºï¸</span> Map Vote
     </div>
     <div class="nav-item" onclick="showPage('mappool')" id="nav-mappool">
-      <span class="icon">📦</span> Map Pool
+      <span class="icon">ðŸ“¦</span> Map Pool
     </div>
     <div class="nav-item" onclick="showPage('history')" id="nav-history">
-      <span class="icon">📋</span> Vote History
+      <span class="icon">ðŸ“‹</span> Vote History
     </div>
     <div class="nav-item" onclick="showPage('events')" id="nav-events">
-      <span class="icon">📡</span> Event Log
+      <span class="icon">ðŸ“¡</span> Event Log
     </div>
 
     
     <div class="nav-item" onclick="showPage('announcement')" id="nav-announcement">
-      <span class="icon">📣</span> Announcement
+      <span class="icon">ðŸ“£</span> Announcement
+    </div>
+    <div class="nav-item" onclick="showPage('polls')" id="nav-polls">
+      <span class="icon">ðŸ“Š</span> Polls
     </div>
     <div class="nav-item" onclick="showPage('tickets')" id="nav-tickets">
-      <span class="icon">🎫</span> Tickets
+      <span class="icon">ðŸŽ«</span> Tickets
     </div>
     <div class="nav-item" onclick="showPage('reports')" id="nav-reports">
-      <span class="icon">🚨</span> Player Reports
+      <span class="icon">ðŸš¨</span> Player Reports
     </div>
     <div class="nav-item" onclick="showPage('staffstats')" id="nav-staffstats">
-      <span class="icon">📊</span> Staff Stats
+      <span class="icon">ðŸ“Š</span> Staff Stats
     </div>
     <div class="nav-item" onclick="showPage('staffarchive')" id="nav-staffarchive">
-      <span class="icon">📁</span> Staff Archive
+      <span class="icon">ðŸ“</span> Staff Archive
     </div>
     <div class="nav-item" onclick="showPage('stafflogs')" id="nav-stafflogs">
-      <span class="icon">📜</span> Staff Logs
+      <span class="icon">ðŸ“œ</span> Staff Logs
+    </div>
+    <div class="nav-item" onclick="showPage('banapprovals')" id="nav-banapprovals">
+      <span class="icon">ðŸ”‘</span> Ban Approvals
+    </div>
+    <div class="nav-item" onclick="showPage('wordfilter')" id="nav-wordfilter">
+      <span class="icon">ðŸš«</span> Word Filter
     </div>
 
     <div class="nav-label" style="margin-top:12px;">Pine Hosting</div>
     <div class="nav-item" onclick="showPage('servers')" id="nav-servers">
-      <span class="icon">🖥️</span> Servers
+      <span class="icon">ðŸ–¥ï¸</span> Servers
     </div>
     <div class="nav-item" onclick="showPage('gameserver')" id="nav-gameserver">
-      <span class="icon">🎮</span> Game Server
+      <span class="icon">ðŸŽ®</span> Game Server
     </div>
     <div class="nav-item" onclick="showPage('wipeplanner')" id="nav-wipeplanner">
-      <span class="icon">📅</span> Wipe Planner
+      <span class="icon">ðŸ“…</span> Wipe Planner
     </div>
     <div class="nav-item" onclick="showPage('serversettings')" id="nav-serversettings">
-      <span class="icon">⚙️</span> Server Settings
+      <span class="icon">âš™ï¸</span> Server Settings
     </div>
     <div class="nav-item" onclick="showPage('eventscheduler')" id="nav-eventscheduler">
-      <span class="icon">📆</span> Event Planner
+      <span class="icon">ðŸ“†</span> Event Planner
+    </div>
+    <div class="nav-item" onclick="showPage('temprank')" id="nav-temprank">
+      <span class="icon">ðŸŽ–ï¸</span> Temp VIP
     </div>
 
     <div class="sidebar-footer">
@@ -473,7 +543,7 @@
         <div class="status-dot" id="statusDot"></div>
         <div>
           <div class="status-text" id="statusTag">Connecting...</div>
-          <div class="status-sub" id="statusGuild">—</div>
+          <div class="status-sub" id="statusGuild">â€”</div>
         </div>
       </div>
     </div>
@@ -490,23 +560,23 @@
       </div>
       <div class="stats-grid" id="statsGrid">
         <div class="stat-card">
-          <div class="stat-icon">👥</div>
-          <div class="stat-value" id="statMembers">—</div>
+          <div class="stat-icon">ðŸ‘¥</div>
+          <div class="stat-value" id="statMembers">â€”</div>
           <div class="stat-label">Server Members</div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon">🗳️</div>
-          <div class="stat-value" id="statTotalVotes">—</div>
+          <div class="stat-icon">ðŸ—³ï¸</div>
+          <div class="stat-value" id="statTotalVotes">â€”</div>
           <div class="stat-label">Total Votes Held</div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon">⚡</div>
-          <div class="stat-value" id="statUptime">—</div>
+          <div class="stat-icon">âš¡</div>
+          <div class="stat-value" id="statUptime">â€”</div>
           <div class="stat-label">Bot Uptime</div>
         </div>
         <div class="stat-card">
-          <div class="stat-icon">🔧</div>
-          <div class="stat-value" id="statFeatures">—</div>
+          <div class="stat-icon">ðŸ”§</div>
+          <div class="stat-value" id="statFeatures">â€”</div>
           <div class="stat-label">Loaded Features</div>
         </div>
       </div>
@@ -514,7 +584,7 @@
       <div id="overviewActiveVote"></div>
 
       <div class="card">
-        <div class="card-title">📡 Recent Events</div>
+        <div class="card-title">ðŸ“¡ Recent Events</div>
         <div class="event-list" id="overviewEvents"><p style="color:var(--muted);font-size:13px">Loading...</p></div>
       </div>
     </div>
@@ -527,7 +597,7 @@
       </div>
 
       <div class="card" id="createVoteCard" style="display:none;">
-        <div class="card-title">🚀 Start New Vote</div>
+        <div class="card-title">ðŸš€ Start New Vote</div>
         <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:16px;">
           <div>
             <label style="font-size:12px; color:var(--muted); font-weight:600; display:block; margin-bottom:4px;">Select Server</label>
@@ -568,13 +638,13 @@
         </div>
         <div style="display:flex; gap:10px;">
           <button id="btnCreateVote" class="btn btn-primary" onclick="createVoteFromDashboard()">Start Vote</button>
-          <button class="btn" style="background:var(--surface); border:1px solid var(--border); color:var(--text);" onclick="drawRandomMaps()">🎲 Add 3 Random Maps from Pool</button>
+          <button class="btn" style="background:var(--surface); border:1px solid var(--border); color:var(--text);" onclick="drawRandomMaps()">ðŸŽ² Add 3 Random Maps from Pool</button>
           <span id="createVoteStatus" style="font-size:13px; align-self:center; font-weight:500;"></span>
         </div>
       </div>
 
       <div id="voteContent">
-        <div class="empty-state"><div class="icon">🗺️</div><p>No active map vote.</p></div>
+        <div class="empty-state"><div class="icon">ðŸ—ºï¸</div><p>No active map vote.</p></div>
       </div>
     </div>
 
@@ -587,7 +657,7 @@
       </div>
       
       <div class="card">
-        <div class="card-title">➕ Add New Server</div>
+        <div class="card-title">âž• Add New Server</div>
         <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:16px;">
           <div>
             <label style="font-size:12px; color:var(--muted); font-weight:600; display:block; margin-bottom:4px;">Server Name (e.g. Main 2x)</label>
@@ -610,7 +680,7 @@
       </div>
 
       <div class="card">
-        <div class="card-title">🖥️ Active Servers</div>
+        <div class="card-title">ðŸ–¥ï¸ Active Servers</div>
         <div class="table-wrap">
           <table>
             <thead>
@@ -634,7 +704,7 @@
     <div class="page" id="page-gameserver">
       <div class="page-header">
         <div class="page-title">Game Server</div>
-        <div class="page-sub">Pine Hosting — console, backups, wipe assistant, plugins, and players</div>
+        <div class="page-sub">Pine Hosting â€” console, backups, wipe assistant, plugins, and players</div>
       </div>
 
       <div class="card">
@@ -645,17 +715,17 @@
           </div>
           <div>
             <div style="font-size:12px;color:var(--muted);margin-bottom:4px;">Status</div>
-            <span class="state-badge state-unknown" id="gs-state">—</span>
+            <span class="state-badge state-unknown" id="gs-state">â€”</span>
           </div>
           <div id="gs-resources" style="font-size:12px;color:var(--muted);align-self:center;"></div>
         </div>
 
         <div class="power-grid">
-          <button type="button" class="btn btn-primary" onclick="serverPower('start')">▶ Start</button>
-          <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="serverPower('restart')">🔄 Restart</button>
-          <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="serverPower('stop')">⏹ Stop</button>
-          <button type="button" class="btn btn-danger" onclick="serverPower('kill')">💀 Kill</button>
-          <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);margin-left:auto;" onclick="refreshGameServer()">↻ Refresh status</button>
+          <button type="button" class="btn btn-primary" onclick="serverPower('start')">â–¶ Start</button>
+          <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="serverPower('restart')">ðŸ”„ Restart</button>
+          <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="serverPower('stop')">â¹ Stop</button>
+          <button type="button" class="btn btn-danger" onclick="serverPower('kill')">ðŸ’€ Kill</button>
+          <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);margin-left:auto;" onclick="refreshGameServer()">â†» Refresh status</button>
         </div>
       </div>
 
@@ -671,12 +741,12 @@
       <!-- Console Sub-tab -->
       <div class="sub-tab-content" id="gameserver-tab-console">
         <div class="card">
-          <div class="card-title">🖥️ Server Console</div>
+          <div class="card-title">ðŸ–¥ï¸ Server Console</div>
           <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">Send commands directly to the Rust server. WebSocket live stream will run if connection details are fetched successfully.</p>
           <div class="console-wrap">
             <div class="console-output" id="gs-console"></div>
             <div class="console-input-row">
-              <input type="text" id="gs-command-input" placeholder="Enter command… e.g. status, o.reload Shop, say Hello" autocomplete="off">
+              <input type="text" id="gs-command-input" placeholder="Enter commandâ€¦ e.g. status, o.reload Shop, say Hello" autocomplete="off">
               <button type="button" class="btn btn-primary" onclick="sendServerCommand()">Send</button>
             </div>
           </div>
@@ -685,7 +755,11 @@
             <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);font-size:12px;padding:6px 10px;" onclick="quickCommand('global.status')">global.status</button>
             <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);font-size:12px;padding:6px 10px;" onclick="quickCommand('o.reload *')">o.reload *</button>
             <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);font-size:12px;padding:6px 10px;" onclick="quickCommand('save')">save</button>
+            <button type="button" class="btn btn-danger" style="font-size:12px;padding:6px 10px;" onclick="resetAllPvpStats()">Reset all K/D</button>
             <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);font-size:12px;padding:6px 10px;" onclick="clearConsole()">Clear console</button>
+          </div>
+          <div style="margin-top:8px;font-size:11px;color:var(--muted);">
+            Reset K/D: <code>mercystats.resetpvp</code> (wipe + all-time) Â· wipe only: <code>mercystats.resetpvp wipe</code> Â· In-game: <code>/mercystats resetpvp</code>
           </div>
         </div>
       </div>
@@ -694,7 +768,7 @@
       <div class="sub-tab-content" id="gameserver-tab-backups" style="display:none;">
         <div class="card">
           <div class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
-            <span>📦 Backups Management (Pine Hosting - Max 3)</span>
+            <span>ðŸ“¦ Backups Management (Pine Hosting - Max 3)</span>
             <button class="btn btn-primary" onclick="createBackup()">+ Create Backup</button>
           </div>
           <div class="table-wrap">
@@ -715,7 +789,7 @@
         </div>
 
         <div class="card" style="margin-top:20px;">
-          <div class="card-title">🗄️ Locally Hosted Backups (on VPS - Unlimited)</div>
+          <div class="card-title">ðŸ—„ï¸ Locally Hosted Backups (on VPS - Unlimited)</div>
           <div class="table-wrap">
             <table>
               <thead>
@@ -737,7 +811,7 @@
       <!-- Wipe Assistant Sub-tab -->
       <div class="sub-tab-content" id="gameserver-tab-wipe" style="display:none;">
         <div class="card">
-          <div class="card-title">🧹 Wipe Assistant</div>
+          <div class="card-title">ðŸ§¹ Wipe Assistant</div>
           <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">This tool stops the server, deletes the selected server files to perform a clean wipe, and starts the server back up.</p>
           <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
             <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
@@ -765,7 +839,7 @@
               <span>Post Discord Wipe Announcement</span>
             </label>
           </div>
-          <button class="btn btn-danger" onclick="executeWipe()">🔥 Perform Server Wipe</button>
+          <button class="btn btn-danger" onclick="executeWipe()">ðŸ”¥ Perform Server Wipe</button>
           <div id="wipe-status" style="margin-top:12px; font-size:13px;"></div>
         </div>
       </div>
@@ -773,7 +847,7 @@
       <!-- Plugins Sub-tab -->
       <div class="sub-tab-content" id="gameserver-tab-plugins" style="display:none;">
         <div class="card">
-          <div class="card-title">🔌 Oxide Plugins</div>
+          <div class="card-title">ðŸ”Œ Oxide Plugins</div>
           <div class="table-wrap">
             <table>
               <thead>
@@ -795,7 +869,7 @@
       <!-- Online Players Sub-tab -->
       <div class="sub-tab-content" id="gameserver-tab-players" style="display:none;">
         <div class="card">
-          <div class="card-title">👥 Online Players</div>
+          <div class="card-title">ðŸ‘¥ Online Players</div>
           <div class="table-wrap">
             <table>
               <thead>
@@ -824,7 +898,7 @@
       </div>
       
       <div class="card">
-        <div class="card-title">📦 Add New Map to Pool</div>
+        <div class="card-title">ðŸ“¦ Add New Map to Pool</div>
         <div style="display:flex; gap:10px; align-items:flex-end; margin-bottom:16px; flex-wrap:wrap;">
           <div style="flex:1; min-width:200px;">
             <label style="font-size:12px; color:var(--muted); font-weight:600; display:block; margin-bottom:4px;">Rustmaps URL</label>
@@ -890,18 +964,18 @@
       <div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
         <div>
           <div class="page-title">Event Scheduler</div>
-          <div class="page-sub">Automatic KOTH and Maze events — scheduled from wipe time</div>
+          <div class="page-sub">Automatic KOTH and Maze events â€” scheduled from wipe time</div>
         </div>
         <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
           <select id="evtsched-server-select" style="padding:8px 12px;background:var(--bg);border:1px solid var(--border);color:white;border-radius:8px;font-family:inherit;font-size:13px;" onchange="evtSchedLoad()"></select>
-          <button class="btn btn-primary" style="padding:8px 16px;font-size:13px;" onclick="evtSchedShowWipeModal()">📅 Set Wipe Time</button>
+          <button class="btn btn-primary" style="padding:8px 16px;font-size:13px;" onclick="evtSchedShowWipeModal()">ðŸ“… Set Wipe Time</button>
         </div>
       </div>
 
       <!-- Sub-tabs -->
       <div style="display:flex;gap:8px;margin-bottom:18px;">
-        <button type="button" class="btn btn-primary sub-tab-btn" id="evtsched-btn-config" onclick="switchSubTab('evtsched','config')">⚙️ Scheduler</button>
-        <button type="button" class="btn sub-tab-btn" id="evtsched-btn-log" style="background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="switchSubTab('evtsched','log')">📋 Event Log</button>
+        <button type="button" class="btn btn-primary sub-tab-btn" id="evtsched-btn-config" onclick="switchSubTab('evtsched','config')">âš™ï¸ Scheduler</button>
+        <button type="button" class="btn sub-tab-btn" id="evtsched-btn-log" style="background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="switchSubTab('evtsched','log')">ðŸ“‹ Event Log</button>
       </div>
 
       <!-- Scheduler config tab -->
@@ -910,7 +984,7 @@
           <!-- KOTH card -->
           <div class="card" id="evtsched-card-koth">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
-              <div class="card-title" style="margin:0;">🏆 King of the Hill</div>
+              <div class="card-title" style="margin:0;">ðŸ† King of the Hill</div>
               <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;color:var(--muted);">
                 <div class="toggle-wrap" id="evtsched-toggle-koth" onclick="evtToggle('koth')">
                   <div class="toggle-slider"></div>
@@ -947,7 +1021,7 @@
             </div>
             <div style="display:flex;gap:10px;margin-top:16px;">
               <button class="btn btn-primary" style="flex:1;padding:9px;" onclick="evtSchedSave('koth')">Save</button>
-              <button class="btn" style="background:var(--surface);border:1px solid var(--border);color:var(--text);padding:9px 14px;" onclick="evtSchedTrigger('koth')" title="Fire event right now">⚡ Now</button>
+              <button class="btn" style="background:var(--surface);border:1px solid var(--border);color:var(--text);padding:9px 14px;" onclick="evtSchedTrigger('koth')" title="Fire event right now">âš¡ Now</button>
             </div>
             <div id="evtsched-msg-koth" style="margin-top:8px;font-size:12px;min-height:18px;"></div>
           </div>
@@ -955,7 +1029,7 @@
           <!-- Maze card -->
           <div class="card" id="evtsched-card-maze">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
-              <div class="card-title" style="margin:0;">🌀 Maze</div>
+              <div class="card-title" style="margin:0;">ðŸŒ€ Maze</div>
               <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;color:var(--muted);">
                 <div class="toggle-wrap" id="evtsched-toggle-maze" onclick="evtToggle('maze')">
                   <div class="toggle-slider"></div>
@@ -992,7 +1066,7 @@
             </div>
             <div style="display:flex;gap:10px;margin-top:16px;">
               <button class="btn btn-primary" style="flex:1;padding:9px;" onclick="evtSchedSave('maze')">Save</button>
-              <button class="btn" style="background:var(--surface);border:1px solid var(--border);color:var(--text);padding:9px 14px;" onclick="evtSchedTrigger('maze')" title="Fire event right now">⚡ Now</button>
+              <button class="btn" style="background:var(--surface);border:1px solid var(--border);color:var(--text);padding:9px 14px;" onclick="evtSchedTrigger('maze')" title="Fire event right now">âš¡ Now</button>
             </div>
             <div id="evtsched-msg-maze" style="margin-top:8px;font-size:12px;min-height:18px;"></div>
           </div>
@@ -1000,8 +1074,8 @@
 
         <!-- Info box -->
         <div style="background:rgba(91,140,255,0.07);border:1px solid rgba(91,140,255,0.2);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--muted);line-height:1.6;">
-          <strong style="color:var(--blue);">ℹ️ How it works</strong><br>
-          Set a <strong>wipe time</strong> (📅 button above) after each wipe. The scheduler will fire each event <em>X hours after wipe</em> for the first time, then repeat every <em>interval hours</em>. Enable/disable events independently. <strong>⚡ Now</strong> fires immediately without affecting the schedule.
+          <strong style="color:var(--blue);">â„¹ï¸ How it works</strong><br>
+          Set a <strong>wipe time</strong> (ðŸ“… button above) after each wipe. The scheduler will fire each event <em>X hours after wipe</em> for the first time, then repeat every <em>interval hours</em>. Enable/disable events independently. <strong>âš¡ Now</strong> fires immediately without affecting the schedule.
         </div>
       </div>
 
@@ -1009,8 +1083,8 @@
       <div class="sub-tab-content" id="evtsched-tab-log" style="display:none;">
         <div class="card">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-            <div class="card-title" style="margin:0;">📋 Event Fire History</div>
-            <button class="btn" style="background:var(--surface);border:1px solid var(--border);color:var(--text);padding:7px 14px;font-size:13px;" onclick="evtSchedLoadLog()">🔄 Refresh</button>
+            <div class="card-title" style="margin:0;">ðŸ“‹ Event Fire History</div>
+            <button class="btn" style="background:var(--surface);border:1px solid var(--border);color:var(--text);padding:7px 14px;font-size:13px;" onclick="evtSchedLoadLog()">ðŸ”„ Refresh</button>
           </div>
           <div class="table-wrap">
             <table>
@@ -1034,7 +1108,7 @@
     <!-- Wipe Time Modal -->
     <div id="evtsched-wipe-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center;">
       <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;width:380px;max-width:95vw;">
-        <div style="font-size:18px;font-weight:700;margin-bottom:8px;">📅 Set Wipe Time</div>
+        <div style="font-size:18px;font-weight:700;margin-bottom:8px;">ðŸ“… Set Wipe Time</div>
         <div style="font-size:13px;color:var(--muted);margin-bottom:18px;">Set when the last wipe happened. All event schedules will be recalculated from this time.</div>
         <div style="margin-bottom:16px;">
           <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:5px;">Wipe Date &amp; Time</label>
@@ -1045,6 +1119,198 @@
           <button class="btn" style="background:var(--surface);border:1px solid var(--border);color:var(--text);" onclick="document.getElementById('evtsched-wipe-modal').style.display='none'">Cancel</button>
         </div>
         <div id="evtsched-wipe-msg" style="margin-top:10px;font-size:12px;min-height:16px;"></div>
+      </div>
+    </div>
+
+    <!-- Temp VIP Page -->
+    <div class="page" id="page-temprank">
+      <div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <div>
+          <div class="page-title">Temporary VIP Ranks</div>
+          <div class="page-sub">Grant time-limited Mercy VIP (rank1â€“rank4) Â· synced to Discord <code>#temp-vip</code></div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="btn btn-danger" onclick="tempRankRevokeAll()">Remove all VIP</button>
+          <button class="btn" style="background:var(--surface);border:1px solid var(--border);color:var(--text);" onclick="tempRankRefreshDiscord()">Refresh Discord</button>
+          <button class="btn btn-primary" onclick="initTempRankPage()">Reload</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <div style="font-weight:700;margin-bottom:14px;">Grant temporary VIP</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;align-items:end;">
+          <div>
+            <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">SteamID64</label>
+            <input id="tr-steamid" type="text" placeholder="76561198..." style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;">
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">Display name (optional)</label>
+            <input id="tr-name" type="text" placeholder="Player name" style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;">
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">Rank</label>
+            <select id="tr-rank" style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;">
+              <option value="rank1">Mercy (rank1)</option>
+              <option value="rank2">Mercy + (rank2)</option>
+              <option value="rank3">Mercy Pro (rank3)</option>
+              <option value="rank4">Mercy Elite (rank4)</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">Days</label>
+            <input id="tr-days" type="number" min="1" max="365" value="30" style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;">
+          </div>
+          <div>
+            <button class="btn btn-primary" style="width:100%;" onclick="tempRankGrant()">Grant VIP</button>
+          </div>
+        </div>
+        <div id="tr-grant-msg" style="margin-top:12px;font-size:13px;min-height:18px;color:var(--muted);"></div>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);">
+          Discord: <code>/temprank grant</code> Â· In-game: <code>/temprank grant &lt;steamid&gt; rank2 30</code><br>
+          Remove all temp: <code>/temprank revokeall</code>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;border-color:rgba(201,168,255,0.35);">
+        <div style="font-weight:700;margin-bottom:6px;">Grant permanent VIP (Lifetime)</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:14px;">
+          Adds the lifetime Oxide group (<code>rank1life</code>â€“<code>rank4life</code>). Does not expire and is not listed under active temp grants.
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;align-items:end;">
+          <div>
+            <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">SteamID64</label>
+            <input id="tr-perm-steamid" type="text" placeholder="76561198..." style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;">
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">Display name (optional)</label>
+            <input id="tr-perm-name" type="text" placeholder="Player name" style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;">
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">Rank</label>
+            <select id="tr-perm-rank" style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;">
+              <option value="rank1">Mercy (rank1)</option>
+              <option value="rank2">Mercy + (rank2)</option>
+              <option value="rank3">Mercy Pro (rank3)</option>
+              <option value="rank4">Mercy Elite (rank4)</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;min-width:140px;" onclick="tempRankGrantPerm()">Grant Lifetime</button>
+            <button class="btn" style="flex:1;min-width:140px;background:var(--surface);border:1px solid var(--border);color:var(--red);" onclick="tempRankPermRevoke()">Revoke Lifetime</button>
+          </div>
+        </div>
+        <div id="tr-perm-msg" style="margin-top:12px;font-size:13px;min-height:18px;color:var(--muted);"></div>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);">
+          Discord: <code>/temprank perm</code> Â· In-game: <code>/temprank perm &lt;steamid&gt; rank2</code><br>
+          Revoke: <code>/temprank permrevoke &lt;steamid&gt; [group]</code>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;border-color:rgba(255,200,100,0.35);">
+        <div style="font-weight:700;margin-bottom:6px;">Mass grant VIP</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:14px;">
+          Paste a SteamID list (one per line, or comma/space separated). Optional name per line: <code>navn 76561198...</code> or <code>76561198... navn</code>. Uses existing VIP ranks only â€” temp <code>rank1</code>â€“<code>rank4</code>, or permanent <code>rank1life</code>â€“<code>rank4life</code> via perm.
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;align-items:end;margin-bottom:12px;">
+          <div>
+            <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">Rank</label>
+            <select id="tr-mass-rank" style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;">
+              <option value="rank1">Mercy (rank1)</option>
+              <option value="rank2">Mercy + (rank2)</option>
+              <option value="rank3">Mercy Pro (rank3)</option>
+              <option value="rank4">Mercy Elite (rank4)</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">Days (leave empty if permanent)</label>
+            <input id="tr-mass-days" type="number" min="1" max="365" placeholder="30" style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;">
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding-bottom:10px;">
+            <input id="tr-mass-perm" type="checkbox" style="width:16px;height:16px;">
+            <label for="tr-mass-perm" style="font-size:13px;color:var(--text);">Permanent (perm)</label>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding-bottom:10px;">
+            <input id="tr-mass-record-only" type="checkbox" style="width:16px;height:16px;">
+            <label for="tr-mass-record-only" style="font-size:13px;color:var(--text);" title="Add to list without granting again on server">Record only (already granted)</label>
+          </div>
+          <div>
+            <button class="btn btn-primary" style="width:100%;" onclick="tempRankMassGrant()">Mass grant</button>
+          </div>
+        </div>
+        <div>
+          <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">SteamID list (optional name per line)</label>
+          <textarea id="tr-mass-ids" rows="8" placeholder="slamordain 76561197986180568&#10;Ayofasty 76561198083525251&#10;76561197989682017 cj" style="width:100%;padding:12px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;font-family:monospace;font-size:12px;resize:vertical;"></textarea>
+        </div>
+        <div id="tr-mass-msg" style="margin-top:12px;font-size:13px;min-height:18px;color:var(--muted);"></div>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);">
+          Discord: <code>/temprank massgrant rank:rank2 duration:perm steamids:&lt;list&gt;</code><br>
+          In-game: <code>/temprank massgrant rank2 perm 76561198...,76561198...</code>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;border-color:rgba(120,200,255,0.35);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
+          <div>
+            <div style="font-weight:700;">Mass grant recipients</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px;">All players given VIP via mass grant (temp + permanent). New entries appear after each mass grant.</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);cursor:pointer;">
+              <input id="tr-mass-filter-perm" type="checkbox" onchange="tempRankLoadMassRecipients()">
+              Permanent only
+            </label>
+            <button class="btn btn-primary" style="padding:8px 12px;font-size:12px;" onclick="tempRankLoadMassRecipients()">Reload</button>
+          </div>
+        </div>
+        <div id="tr-mass-count" style="font-size:12px;color:var(--muted);margin-bottom:10px;">â€”</div>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+              <tr style="color:var(--muted);text-align:left;border-bottom:1px solid var(--border);">
+                <th style="padding:10px 8px;">Name</th>
+                <th style="padding:10px 8px;">SteamID</th>
+                <th style="padding:10px 8px;">Rank</th>
+                <th style="padding:10px 8px;">Type</th>
+                <th style="padding:10px 8px;">Granted</th>
+                <th style="padding:10px 8px;">Granted by</th>
+                <th style="padding:10px 8px;">Batch</th>
+              </tr>
+            </thead>
+            <tbody id="tr-mass-body">
+              <tr><td colspan="7" style="padding:16px;color:var(--muted);">Loadingâ€¦</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
+          <div style="font-weight:700;">Active grants</div>
+          <div id="tr-active-count" style="font-size:12px;color:var(--muted);">â€”</div>
+        </div>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+              <tr style="color:var(--muted);text-align:left;border-bottom:1px solid var(--border);">
+                <th style="padding:10px 8px;">Name</th>
+                <th style="padding:10px 8px;">SteamID</th>
+                <th style="padding:10px 8px;">Rank</th>
+                <th style="padding:10px 8px;">Time left</th>
+                <th style="padding:10px 8px;">Expires</th>
+                <th style="padding:10px 8px;">Granted by</th>
+                <th style="padding:10px 8px;"></th>
+              </tr>
+            </thead>
+            <tbody id="tr-active-body">
+              <tr><td colspan="7" style="padding:16px;color:var(--muted);">Loadingâ€¦</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:14px;">Recent log</div>
+        <div id="tr-log-list" style="font-size:12px;color:var(--muted);">Loadingâ€¦</div>
       </div>
     </div>
 
@@ -1124,7 +1390,7 @@
         <div style="display:grid; grid-template-columns:1fr 1.5fr; gap:20px;">
           <!-- Add Announcement Form -->
           <div class="card">
-            <div class="card-title">➕ Add Scheduled Announcement</div>
+            <div class="card-title">âž• Add Scheduled Announcement</div>
             <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:16px;">
               <div>
                 <label style="font-size:12px; color:var(--muted); display:block; margin-bottom:4px;">Broadcast Message</label>
@@ -1144,7 +1410,7 @@
           
           <!-- Scheduled Announcements List -->
           <div class="card">
-            <div class="card-title">📋 Active Scheduled Broadcasts</div>
+            <div class="card-title">ðŸ“‹ Active Scheduled Broadcasts</div>
             <div class="table-wrap">
               <table>
                 <thead>
@@ -1166,22 +1432,109 @@
       </div>
     </div>
 
+    <!-- Polls Page -->
+    <div class="page" id="page-polls">
+      <div class="page-header">
+        <div class="page-title">Polls</div>
+        <div class="page-sub">Create Mercy-branded Discord polls with live results and countdown</div>
+      </div>
+
+      <div class="card" style="display:flex; gap:30px; flex-wrap:wrap; margin-bottom:20px;">
+        <div style="flex:1; min-width:320px;">
+          <div class="card-title">âœ¨ Create Poll</div>
+          <form id="poll-form" style="display:flex; flex-direction:column; gap:14px; margin-top:14px;">
+            <div>
+              <label style="display:block; margin-bottom:5px; color:var(--muted); font-size:12px;">Target Channel *</label>
+              <select id="poll-channel" style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid var(--border); color:#fff; border-radius:6px;" required>
+                <option value="">Loading channels...</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block; margin-bottom:5px; color:var(--muted); font-size:12px;">Headline / Question *</label>
+              <input type="text" id="poll-title" maxlength="256" placeholder="e.g. What should we focus on next wipe?" style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid var(--border); color:#fff; border-radius:6px;" required>
+            </div>
+            <div>
+              <label style="display:block; margin-bottom:5px; color:var(--muted); font-size:12px;">Description (optional)</label>
+              <textarea id="poll-description" rows="3" maxlength="1000" placeholder="Extra context for voters..." style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid var(--border); color:#fff; border-radius:6px; resize:vertical;"></textarea>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <label style="color:var(--muted); font-size:12px;">Options * (min 2, max 10)</label>
+                <button type="button" class="btn btn-sm" style="background:var(--surface); border:1px solid var(--border); color:var(--text);" onclick="pollAddOption()">+ Add option</button>
+              </div>
+              <div id="poll-options-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <div style="flex:1; min-width:120px;">
+                <label style="display:block; margin-bottom:5px; color:var(--muted); font-size:12px;">Duration *</label>
+                <input type="number" id="poll-duration-value" min="1" value="24" style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid var(--border); color:#fff; border-radius:6px;" required>
+              </div>
+              <div style="flex:1; min-width:120px;">
+                <label style="display:block; margin-bottom:5px; color:var(--muted); font-size:12px;">&nbsp;</label>
+                <select id="poll-duration-unit" style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid var(--border); color:#fff; border-radius:6px;">
+                  <option value="m">Minutes</option>
+                  <option value="h" selected>Hours</option>
+                  <option value="d">Days</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label style="display:block; margin-bottom:5px; color:var(--muted); font-size:12px;">Ping when posted</label>
+              <select id="poll-ping" style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid var(--border); color:#fff; border-radius:6px;">
+                <option value="none">None</option>
+                <option value="here">@here</option>
+                <option value="everyone">@everyone</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Post Poll to Discord</button>
+          </form>
+          <div id="poll-form-result" style="margin-top:12px; font-weight:500;"></div>
+        </div>
+
+        <div style="flex:1; min-width:320px;">
+          <label style="display:block; margin-bottom:12px; color:var(--muted); font-size:12px;">Live Preview</label>
+          <div style="background:#313338; border-radius:4px; padding:16px; border-left:4px solid #b19cd9; color:#dbdee1; font-family:sans-serif; box-shadow:0 4px 6px rgba(0,0,0,0.3);">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+              <img src="/icon.png" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'" style="width:24px; height:24px; border-radius:50%;">
+              <span style="font-weight:600; font-size:14px; color:#fff;">Mercy Rust</span>
+              <span style="font-size:12px; color:#949ba4;">Preview</span>
+            </div>
+            <div id="poll-preview-title" style="font-weight:700; font-size:16px; margin-bottom:10px; color:#fff;">ðŸ“Š Poll headline</div>
+            <div id="poll-preview-description" style="font-size:13px; color:#b5bac1; margin-bottom:12px; display:none;"></div>
+            <div id="poll-preview-options" style="display:flex; flex-direction:column; gap:12px; font-size:13px;"></div>
+            <div id="poll-preview-meta" style="margin-top:14px; font-size:12px; color:#949ba4;">0 votes so far Â· Closes in 24 hours</div>
+            <div id="poll-preview-buttons" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div class="card-title" style="margin:0;">ðŸ—³ï¸ Active Polls</div>
+          <button type="button" class="btn btn-sm" style="background:var(--surface); border:1px solid var(--border); color:var(--text);" onclick="loadActivePolls()">Refresh</button>
+        </div>
+        <div id="poll-active-content">
+          <div class="empty-state"><div class="icon">ðŸ“Š</div><p>Loading active polls...</p></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Tickets Page (TicketBot) -->
     <div class="page" id="page-tickets">
       <div class="page-header">
         <div class="page-title">Ticket Bot</div>
-        <div class="page-sub">Full control of TicketBot — panel, types, questions, buttons and bot actions</div>
+        <div class="page-sub">Full control of TicketBot â€” panel, types, questions, buttons and bot actions</div>
       </div>
 
       <div class="stats-grid" id="ticket-stats-grid">
-        <div class="stat-card"><div class="stat-icon">🤖</div><div class="stat-value" id="tb-status">—</div><div class="stat-label">Bot Status</div></div>
-        <div class="stat-card"><div class="stat-icon">⏳</div><div class="stat-value" id="tb-pending">—</div><div class="stat-label">Pending</div></div>
-        <div class="stat-card"><div class="stat-icon">🟢</div><div class="stat-value" id="tb-open">—</div><div class="stat-label">Open</div></div>
-        <div class="stat-card"><div class="stat-icon">🔒</div><div class="stat-value" id="tb-closed">—</div><div class="stat-label">Closed</div></div>
+        <div class="stat-card"><div class="stat-icon">ðŸ¤–</div><div class="stat-value" id="tb-status">â€”</div><div class="stat-label">Bot Status</div></div>
+        <div class="stat-card"><div class="stat-icon">â³</div><div class="stat-value" id="tb-pending">â€”</div><div class="stat-label">Pending</div></div>
+        <div class="stat-card"><div class="stat-icon">ðŸŸ¢</div><div class="stat-value" id="tb-open">â€”</div><div class="stat-label">Open</div></div>
+        <div class="stat-card"><div class="stat-icon">ðŸ”’</div><div class="stat-value" id="tb-closed">â€”</div><div class="stat-label">Closed</div></div>
       </div>
 
       <div class="card">
-        <div class="card-title">⚡ Bot Actions</div>
+        <div class="card-title">âš¡ Bot Actions</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
           <button type="button" class="btn btn-primary" onclick="saveTicketConfig()">Save all changes</button>
           <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="reloadTicketBot()">Restart TicketBot</button>
@@ -1200,13 +1553,15 @@
       </div>
 
       <div class="card" id="ticket-tab-panel">
-        <div class="card-title">📋 Create-Ticket Panel</div>
+        <div class="card-title">ðŸ“‹ Create-Ticket Panel</div>
         <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">This embed and its buttons appear in the public #create-ticket channel.</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
           <div><label style="font-size:12px;color:var(--muted);">Title</label><input id="p-title" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
           <div><label style="font-size:12px;color:var(--muted);">Color</label><input id="p-color" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
           <div><label style="font-size:12px;color:var(--muted);">Category name</label><input id="p-category" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
           <div><label style="font-size:12px;color:var(--muted);">Channel name</label><input id="p-channel" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
+          <div><label style="font-size:12px;color:var(--muted);">Channel ID</label><input id="p-channel-id" placeholder="Discord channel ID" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
+          <div><label style="font-size:12px;color:var(--muted);">Panel message ID</label><input id="p-message-id" placeholder="Discord message ID to edit in place" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
           <div style="grid-column:1/-1;"><label style="font-size:12px;color:var(--muted);">Description</label><textarea id="p-description" rows="4" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;resize:vertical;"></textarea></div>
           <div><label style="font-size:12px;color:var(--muted);">Footer</label><input id="p-footer" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
         </div>
@@ -1230,22 +1585,24 @@
             <div><label style="font-size:12px;color:var(--muted);">Emoji</label><input id="t-emoji" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
             <div><label style="font-size:12px;color:var(--muted);">Embed color</label><input id="t-color" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
             <div><label style="font-size:12px;color:var(--muted);">Discord category</label><input id="t-category" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
+            <div><label style="font-size:12px;color:var(--muted);">Category ID</label><input id="t-category-id" placeholder="Discord category ID" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
             <div><label style="font-size:12px;color:var(--muted);">Inbox channel</label><input id="t-inbox" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
+            <div style="grid-column:1/-1;"><label style="font-size:12px;color:var(--muted);">Staff roles to ping (one Discord role ID per line)</label><textarea id="t-staff-roles" rows="4" placeholder="1514070355843612793" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;resize:vertical;font-family:monospace;font-size:12px;"></textarea></div>
             <div><label style="font-size:12px;color:var(--muted);">Panel label</label><input id="t-panel-label" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
             <div><label style="font-size:12px;color:var(--muted);">Panel style</label><select id="t-panel-style" style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--border);color:#fff;border-radius:6px;"></select></div>
             <div><label style="font-size:12px;color:var(--muted);">Panel order</label><input id="t-panel-order" type="number" min="1" style="width:100%;padding:10px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:#fff;border-radius:6px;"></div>
             <div style="display:flex;align-items:center;gap:8px;padding-top:22px;"><input type="checkbox" id="t-show-panel" style="width:16px;height:16px;"><label for="t-show-panel" style="font-size:13px;">Show on panel</label></div>
           </div>
 
-          <div class="card-title">❓ Questions <span>(max 5 — Discord modal limit)</span></div>
+          <div class="card-title">â“ Questions <span>(max 5 â€” Discord modal limit)</span></div>
           <div id="t-questions-list" style="display:flex;flex-direction:column;gap:10px;"></div>
           <button type="button" class="btn" style="margin-top:10px;background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="addTicketQuestion()">+ Add question</button>
 
-          <div class="card-title" style="margin-top:24px;">📥 Inbox Buttons</div>
+          <div class="card-title" style="margin-top:24px;">ðŸ“¥ Inbox Buttons</div>
           <div id="t-inbox-buttons" style="display:flex;flex-direction:column;gap:12px;"></div>
           <button type="button" class="btn" style="margin-top:10px;background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="addTicketButton('inbox')">+ Add inbox button</button>
 
-          <div class="card-title" style="margin-top:24px;">🛠️ Staff Buttons</div>
+          <div class="card-title" style="margin-top:24px;">ðŸ› ï¸ Staff Buttons</div>
           <div id="t-staff-buttons" style="display:flex;flex-direction:column;gap:12px;"></div>
           <button type="button" class="btn" style="margin-top:10px;background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="addTicketButton('staff')">+ Add staff button</button>
         </div>
@@ -1253,7 +1610,7 @@
 
       <!-- Ticket Viewer tab -->
       <div class="card" id="ticket-tab-viewer" style="display:none;">
-        <div class="card-title">🎫 Active & Closed Tickets</div>
+        <div class="card-title">ðŸŽ« Active & Closed Tickets</div>
         <div class="table-wrap" style="margin-bottom:20px;">
           <table>
             <thead>
@@ -1276,7 +1633,7 @@
         
         <div id="ticket-transcript-area" style="display:none; border-top:1px solid var(--border); padding-top:20px;">
           <h3 style="font-size:15px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
-            <span>💬 Conversation Transcript for Ticket #<span id="transcript-ticket-id"></span></span>
+            <span>ðŸ’¬ Conversation Transcript for Ticket #<span id="transcript-ticket-id"></span></span>
             <button class="btn" style="background:var(--surface); color:var(--text); border:1px solid var(--border); font-size:12px; padding:4px 8px;" onclick="closeTranscript()">Close Transcript</button>
           </h3>
           <div id="transcript-qa-box" style="margin-bottom:14px; background:var(--surface); border:1px solid var(--border); padding:12px; border-radius:6px; font-size:13px;"></div>
@@ -1288,7 +1645,7 @@
       <div class="card" id="ticket-tab-presencesync" style="display:none;">
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
           <div>
-            <div class="card-title">🤖 Rich Presence Activity</div>
+            <div class="card-title">ðŸ¤– Rich Presence Activity</div>
             <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:16px;">
               <div>
                 <label style="font-size:12px; color:var(--muted); display:block; margin-bottom:4px;">Activity Text</label>
@@ -1320,9 +1677,9 @@
           </div>
           
           <div>
-            <div class="card-title">🔗 Steam/Discord Role Sync</div>
+            <div class="card-title">ðŸ”— Steam/Discord Role Sync</div>
             <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">Manually sync Steam-linked Discord roles in the guild. This scans the database and assigns the "Member" and "Verified" roles to all linked players.</p>
-            <button class="btn btn-primary" onclick="triggerRoleSync()">🔄 Run Role Sync</button>
+            <button class="btn btn-primary" onclick="triggerRoleSync()">ðŸ”„ Run Role Sync</button>
             <div id="role-sync-result" style="margin-top:14px; font-size:13px; font-weight:600;"></div>
           </div>
         </div>
@@ -1359,7 +1716,7 @@
         
         <div id="report-transcript-area" style="display:none; border-top:1px solid var(--border); padding-top:20px; margin-top:20px;">
           <h3 style="font-size:15px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
-            <span>💬 Report Details & Ticket Transcript #<span id="report-ticket-id"></span></span>
+            <span>ðŸ’¬ Report Details & Ticket Transcript #<span id="report-ticket-id"></span></span>
             <button class="btn" style="background:var(--surface); color:var(--text); border:1px solid var(--border); font-size:12px; padding:4px 8px;" onclick="closeReportTranscript()">Close</button>
           </h3>
           <div id="report-qa-box" style="margin-bottom:14px; background:var(--surface); border:1px solid var(--border); padding:12px; border-radius:6px; font-size:13px;"></div>
@@ -1372,21 +1729,22 @@
     <div class="page" id="page-staffarchive">
       <div class="page-header">
         <div class="page-title">Staff Archive</div>
-        <div class="page-sub">Staff history, promotions, notes and ticket counts — synced from Discord</div>
+        <div class="page-sub">Active staff, former staff history, leave notes and ticket counts â€” nothing is deleted when someone leaves</div>
       </div>
 
       <div id="archive-list-view">
         <div class="card">
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px;">
-            <input type="text" id="archive-search" placeholder="Search name, Discord ID, Steam ID…" oninput="filterArchiveList()" style="flex:1;min-width:200px;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;">
+            <input type="text" id="archive-search" placeholder="Search name, Discord ID, Steam IDâ€¦" oninput="filterArchiveList()" style="flex:1;min-width:200px;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;">
             <select id="archive-status-filter" onchange="filterArchiveList()" style="background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;">
               <option value="all">All staff</option>
               <option value="active" selected>Active only</option>
-              <option value="inactive">Inactive</option>
+              <option value="archived">Archived only</option>
             </select>
             <button type="button" class="btn btn-primary" onclick="syncStaffArchive()">Sync from Discord</button>
+            <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="openAddFormerStaffModal()">+ Add former staff</button>
           </div>
-          <div id="archive-sync-status" style="font-size:13px;color:var(--muted);margin-bottom:12px;">Loading…</div>
+          <div id="archive-sync-status" style="font-size:13px;color:var(--muted);margin-bottom:12px;">Loadingâ€¦</div>
           <div class="table-wrap">
             <table>
               <thead>
@@ -1400,7 +1758,7 @@
                 </tr>
               </thead>
               <tbody id="archive-list-body">
-                <tr><td colspan="6" style="color:var(--muted);padding:14px;">Loading…</td></tr>
+                <tr><td colspan="6" style="color:var(--muted);padding:14px;">Loadingâ€¦</td></tr>
               </tbody>
             </table>
           </div>
@@ -1408,7 +1766,7 @@
       </div>
 
       <div id="archive-detail-view" style="display:none;">
-        <button type="button" class="btn" style="margin-bottom:16px;background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="closeArchiveDetail()">← Back to list</button>
+        <button type="button" class="btn" style="margin-bottom:16px;background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="closeArchiveDetail()">â† Back to list</button>
 
         <div class="card" id="archive-detail-header"></div>
 
@@ -1422,13 +1780,26 @@
             <div id="archive-notes" style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px;max-height:360px;overflow-y:auto;"></div>
             <div style="border-top:1px solid var(--border);padding-top:16px;">
               <input type="text" id="archive-note-title" placeholder="Title (optional)" style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;margin-bottom:8px;">
-              <textarea id="archive-note-body" placeholder="Write a note…" rows="4" style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;resize:vertical;"></textarea>
+              <textarea id="archive-note-body" placeholder="Write a noteâ€¦" rows="4" style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;resize:vertical;"></textarea>
               <button type="button" class="btn btn-primary" style="margin-top:10px;" onclick="saveArchiveNote()">Add note</button>
             </div>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="archive-active-actions" style="display:none;">
+          <div class="card-title">Archive staff member</div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">Move this person to the archived list without deleting their history. Use this when someone leaves staff â€” they stay searchable under <strong>Archived only</strong>.</p>
+          <textarea id="archive-leave-reason" placeholder="Why did they leave? (required)" rows="3" style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;resize:vertical;"></textarea>
+          <button type="button" class="btn btn-danger" style="margin-top:10px;" onclick="archiveStaffMember()">Archive staff member</button>
+          <div id="archive-leave-status" style="font-size:13px;color:var(--muted);margin-top:10px;"></div>
+        </div>
+
+        <div class="card" id="archive-archived-info" style="display:none;">
+          <div class="card-title">Archived staff</div>
+          <div id="archive-archived-summary" style="font-size:13px;line-height:1.6;"></div>
+        </div>
+
+        <div class="card" id="archive-override-section">
           <div class="card-title">Manual rank override</div>
           <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">Override the displayed rank without changing Discord roles. Discord promotions still log to the timeline.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;">
@@ -1446,7 +1817,7 @@
           <div id="archive-override-status" style="font-size:13px;color:var(--muted);margin-top:10px;"></div>
         </div>
 
-        <div class="card" style="margin-top:16px;">
+        <div class="card" style="margin-top:16px;" id="archive-steamid-section">
           <div class="card-title">Manual Steam ID override</div>
           <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">Manually set the Steam ID for this staff member if they haven't linked their Discord to Steam.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;">
@@ -1462,11 +1833,31 @@
       </div>
     </div>
 
+    <div id="add-former-staff-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:9999;align-items:center;justify-content:center;padding:20px;">
+      <div class="card" style="width:100%;max-width:520px;margin:0;">
+        <div class="card-title">Add former staff to archive</div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">Use this for staff who left before tracking, or who disappeared from the active list. Their history stays in the archive.</p>
+        <div style="display:grid;gap:10px;">
+          <input type="text" id="former-discord-id" placeholder="Discord ID (required)" style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:monospace;font-size:13px;">
+          <input type="text" id="former-username" placeholder="Username (required)" style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;">
+          <input type="text" id="former-display-name" placeholder="Display name (optional)" style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;">
+          <select id="former-role-id" style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;"></select>
+          <input type="text" id="former-steam-id" placeholder="Steam ID (optional)" style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:monospace;font-size:13px;">
+          <textarea id="former-reason" placeholder="Why did they leave / archive note (required)" rows="4" style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:inherit;font-size:13px;resize:vertical;"></textarea>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px;justify-content:flex-end;">
+          <button type="button" class="btn" style="background:var(--surface);color:var(--text);border:1px solid var(--border);" onclick="closeAddFormerStaffModal()">Cancel</button>
+          <button type="button" class="btn btn-primary" onclick="submitFormerStaff()">Add to archive</button>
+        </div>
+        <div id="former-staff-status" style="font-size:13px;color:var(--muted);margin-top:10px;"></div>
+      </div>
+    </div>
+
     <!-- Staff Stats Page -->
     <div class="page" id="page-staffstats">
       <div class="page-header">
         <div class="page-title">Staff Statistics</div>
-        <div class="page-sub">Weekly report per staff member — tickets closed since last gather</div>
+        <div class="page-sub">Weekly report per staff member â€” tickets closed since last gather</div>
       </div>
 
       <div class="card">
@@ -1501,7 +1892,7 @@
             <option value="kill">Kills only</option>
             <option value="death">Deaths only</option>
           </select>
-          <button type="button" class="btn btn-primary" onclick="loadStaffLogs()">🔄 Refresh Logs</button>
+          <button type="button" class="btn btn-primary" onclick="loadStaffLogs()">ðŸ”„ Refresh Logs</button>
         </div>
         <div class="table-wrap">
           <table>
@@ -1509,16 +1900,29 @@
               <tr>
                 <th>Time</th>
                 <th>Staff Member</th>
-           <div class="page" id="page-wipeplanner">
+                <th>Event Type</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody id="stafflogs-list-body">
+              <tr><td colspan="4" style="color:var(--muted);padding:14px;text-align:center;">Loading logs...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wipe Planner Page -->
+    <div class="page" id="page-wipeplanner">
       <div class="page-header">
         <div class="page-title">Wipe Planner</div>
-        <div class="page-sub">Schedule automated map voting and server wiping — one-time or recurring</div>
+        <div class="page-sub">Schedule automated map voting and server wiping â€” one-time or recurring</div>
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1.5fr; gap:20px;">
         <!-- Schedule Form -->
         <div class="card">
-          <div class="card-title">📅 Schedule Wipe Cycle</div>
+          <div class="card-title">ðŸ“… Schedule Wipe Cycle</div>
           <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:16px;">
 
             <!-- Server -->
@@ -1548,7 +1952,7 @@
             <div style="background:rgba(255,153,0,0.08); border:1px solid rgba(255,153,0,0.25); border-radius:8px; padding:12px;">
               <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
                 <input type="checkbox" id="wipeplanner-biweekly" style="width:16px; height:16px; accent-color:var(--accent2);">
-                <label for="wipeplanner-biweekly" style="font-size:13px; font-weight:600; cursor:pointer;">🔄 Enable biweekly auto-repeat (every 14 days)</label>
+                <label for="wipeplanner-biweekly" style="font-size:13px; font-weight:600; cursor:pointer;">ðŸ”„ Enable biweekly auto-repeat (every 14 days)</label>
               </div>
               <div style="font-size:11px; color:var(--muted); padding-left:24px;">
                 After each wipe, the next cycle is queued automatically. The last winning map is excluded from the next vote draw.
@@ -1583,7 +1987,7 @@
 
         <!-- Schedule List -->
         <div class="card">
-          <div class="card-title">📋 Scheduled Wipe Cycles</div>
+          <div class="card-title">ðŸ“‹ Scheduled Wipe Cycles</div>
           <div class="table-wrap">
             <table>
               <thead>
@@ -1614,7 +2018,7 @@
       </div>
 
       <div class="card" style="max-width: 650px;">
-        <div class="card-title">⚙️ Modify Server Convars</div>
+        <div class="card-title">âš™ï¸ Modify Server Convars</div>
         <div style="display:flex; flex-direction:column; gap:15px;">
           <div>
             <label style="font-size:12px; color:var(--muted); display:block; margin-bottom:4px;">Select Server</label>
@@ -1655,17 +2059,218 @@
       </div>
     </div>
 
+  <!-- â”€â”€ Ban Approvals Page â”€â”€ -->
+  <div class="page" id="page-banapprovals">
+    <div class="page-header" style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div class="page-title">Ban Approvals</div>
+        <div class="page-sub">Management overview â€” trial admin bans, review status, and API keys</div>
+      </div>
+      <button class="btn" style="background:var(--surface);border:1px solid var(--border);" onclick="bakRefreshAll()">â†» Refresh</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid" id="bak-stats-grid">
+      <div class="stat-card clickable" onclick="bakSetFilter('all')" id="bak-stat-all">
+        <div class="stat-icon">ðŸ“Š</div>
+        <div class="stat-value" id="bak-stat-total">â€”</div>
+        <div class="stat-label">Total Requests</div>
+      </div>
+      <div class="stat-card clickable" onclick="bakSetFilter('pending')" id="bak-stat-pending">
+        <div class="stat-icon">â³</div>
+        <div class="stat-value" id="bak-stat-pending-val" style="color:var(--accent2);">â€”</div>
+        <div class="stat-label">Pending Review</div>
+      </div>
+      <div class="stat-card clickable" onclick="bakSetFilter('approved')" id="bak-stat-approved">
+        <div class="stat-icon">âœ…</div>
+        <div class="stat-value" id="bak-stat-approved-val" style="color:var(--green);">â€”</div>
+        <div class="stat-label">Approved</div>
+      </div>
+      <div class="stat-card clickable" onclick="bakSetFilter('denied')" id="bak-stat-denied">
+        <div class="stat-icon">âŒ</div>
+        <div class="stat-value" id="bak-stat-denied-val" style="color:var(--red);">â€”</div>
+        <div class="stat-label">Denied</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">ðŸ‘¥</div>
+        <div class="stat-value" id="bak-stat-staff">â€”</div>
+        <div class="stat-label">Active Trial Admins</div>
+      </div>
+    </div>
+
+    <!-- Pending alert -->
+    <div id="bak-pending-alert" style="display:none;margin-bottom:20px;" class="active-vote-banner">
+      <div class="vote-meta">
+        <h3 id="bak-pending-alert-title">â€” pending review</h3>
+        <p id="bak-pending-alert-sub">These bans are waiting for admin review on Discord.</p>
+      </div>
+      <button class="btn btn-primary" onclick="bakSetFilter('pending')">View Pending</button>
+    </div>
+
+    <div class="bak-layout">
+      <!-- Staff sidebar -->
+      <div>
+        <div class="card" style="margin-bottom:0;">
+          <div class="card-title">ðŸ‘¥ Trial Admins <span id="bak-staff-count"></span></div>
+          <div id="bak-staff-list"><div style="color:var(--muted);font-size:13px;">Loading...</div></div>
+          <button class="btn" style="width:100%;margin-top:10px;background:var(--surface);border:1px solid var(--border);font-size:12px;" onclick="bakClearStaffFilter()">Show All Staff</button>
+        </div>
+      </div>
+
+      <!-- Requests main -->
+      <div>
+        <div class="card" style="margin-bottom:0;">
+          <div class="card-title">ðŸ“‹ Ban Requests</div>
+
+          <div class="bak-tabs" id="bak-status-tabs">
+            <div class="bak-tab active" data-status="all" onclick="bakSetFilter('all')">All<span class="count" id="bak-tab-all"></span></div>
+            <div class="bak-tab" data-status="pending" onclick="bakSetFilter('pending')">Pending<span class="count" id="bak-tab-pending"></span></div>
+            <div class="bak-tab" data-status="approved" onclick="bakSetFilter('approved')">Approved<span class="count" id="bak-tab-approved"></span></div>
+            <div class="bak-tab" data-status="denied" onclick="bakSetFilter('denied')">Denied<span class="count" id="bak-tab-denied"></span></div>
+          </div>
+
+          <div class="bak-toolbar">
+            <input type="text" id="bak-search" class="bak-search" placeholder="Search player, admin, reason, Steam ID..." oninput="bakDebouncedLoadRequests()">
+            <select id="bak-staff-filter" class="bak-search" style="flex:0 0 180px;" onchange="bakStaffFilterChanged()">
+              <option value="">All staff</option>
+            </select>
+          </div>
+
+          <div id="bak-requests-list"><div style="color:var(--muted);font-size:13px;">Loading...</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- API Keys (collapsible) -->
+    <div style="margin-top:24px;">
+      <div class="bak-section-toggle" onclick="bakToggleKeysPanel()">
+        <span id="bak-keys-chevron">â–¶</span> Manage API Keys
+      </div>
+      <div class="bak-keys-panel" id="bak-keys-panel">
+        <div class="card" style="max-width:680px;margin-bottom:16px;">
+          <div class="card-title">ðŸ”‘ Create Trial Admin API Key</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+            <div>
+              <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Display Name <span style="color:var(--red);">*</span></label>
+              <input id="bak-name" type="text" placeholder="e.g. Lars" style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--border);color:white;border-radius:6px;font-family:inherit;font-size:13px;">
+            </div>
+            <div>
+              <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Discord Username</label>
+              <input id="bak-discord-name" type="text" placeholder="e.g. Lars" style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--border);color:white;border-radius:6px;font-family:inherit;font-size:13px;">
+            </div>
+            <div>
+              <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Discord User ID</label>
+              <input id="bak-discord-id" type="text" placeholder="e.g. 123456789012345678" style="width:100%;padding:10px;background:var(--bg);border:1px solid var(--border);color:white;border-radius:6px;font-family:inherit;font-size:13px;">
+            </div>
+            <div style="display:flex;align-items:flex-end;">
+              <button class="btn btn-primary" style="width:100%;height:42px;" onclick="bakCreateKey()">Generate Key</button>
+            </div>
+          </div>
+          <div id="bak-new-key-box" style="display:none;background:var(--bg);border:1px solid var(--green);border-radius:8px;padding:14px;margin-top:4px;">
+            <div style="font-size:12px;color:var(--green);font-weight:600;margin-bottom:8px;">âœ… Key created â€” copy it now, it will never be shown again.</div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <code id="bak-new-key-value" style="flex:1;background:#0d0e14;padding:10px 14px;border-radius:6px;font-size:13px;color:var(--text);word-break:break-all;"></code>
+              <button class="btn" style="background:var(--surface);border:1px solid var(--border);" onclick="bakCopyKey()">Copy</button>
+            </div>
+          </div>
+          <div id="bak-create-status" style="margin-top:10px;font-size:13px;"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">ðŸ” API Keys</div>
+          <div id="bak-keys-table"><div style="color:var(--muted);font-size:13px;">Loading...</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- â”€â”€ Word Filter Page â”€â”€ -->
+  <div class="page" id="page-wordfilter">
+    <div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <div>
+        <div class="page-title">Discord Word Filter</div>
+        <div class="page-sub">Block banned words in Discord channels Â· staff bypass Â· auto-delete with brief notice</div>
+      </div>
+      <button class="btn btn-primary" onclick="initWordFilterPage()">Reload</button>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <div style="font-weight:700;margin-bottom:14px;">Settings</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;align-items:end;">
+        <label style="display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer;">
+          <input type="checkbox" id="wf-enabled" onchange="wfSaveSettings()">
+          Filter enabled
+        </label>
+        <div>
+          <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">Notice duration (seconds)</label>
+          <input id="wf-notice-seconds" type="number" min="1" max="60" value="5" style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;" onchange="wfSaveSettings()">
+        </div>
+        <div style="grid-column:1/-1;">
+          <label style="display:block;margin-bottom:6px;color:var(--muted);font-size:12px;">Message shown when a word is blocked (channel notice, auto-deleted â€” not DM)</label>
+          <input id="wf-block-message" type="text" maxlength="500" style="width:100%;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;" onchange="wfSaveSettings()">
+        </div>
+      </div>
+      <div id="wf-settings-msg" style="margin-top:12px;font-size:13px;color:var(--muted);min-height:18px;"></div>
+      <div style="margin-top:10px;font-size:12px;color:var(--muted);">
+        Active blocked words: <strong id="wf-word-count">â€”</strong> Â· Staff and admins are exempt.
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <div style="font-weight:700;margin-bottom:14px;">Add word or phrase</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <input id="wf-new-word" type="text" placeholder="e.g. scam phrase or single word" style="flex:1;min-width:220px;padding:10px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;" onkeydown="if(event.key==='Enter')wfAddWord()">
+        <button class="btn btn-primary" onclick="wfAddWord()">Add</button>
+      </div>
+      <div id="wf-add-msg" style="margin-top:10px;font-size:13px;min-height:18px;color:var(--muted);"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
+        <div style="font-weight:700;">Blocked words</div>
+        <input id="wf-search" type="text" placeholder="Search wordsâ€¦" oninput="wfRenderWords()" style="padding:8px 12px;background:rgba(0,0,0,0.25);border:1px solid var(--border);color:#fff;border-radius:8px;min-width:180px;">
+      </div>
+      <div style="overflow-x:auto;max-height:420px;overflow-y:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="color:var(--muted);text-align:left;border-bottom:1px solid var(--border);">
+              <th style="padding:10px 8px;">Word</th>
+              <th style="padding:10px 8px;">Added by</th>
+              <th style="padding:10px 8px;">Added</th>
+              <th style="padding:10px 8px;"></th>
+            </tr>
+          </thead>
+          <tbody id="wf-words-body">
+            <tr><td colspan="4" style="padding:16px;color:var(--muted);">Loadingâ€¦</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-weight:700;margin-bottom:14px;">Recent blocks</div>
+      <div id="wf-log-list" style="font-size:12px;color:var(--muted);">Loadingâ€¦</div>
+    </div>
+  </div>
+
   </main>
 </div>
 
 <script>
   let localBackupsInterval = null;
 
-  // ── Navigation ──
+  // â”€â”€ Navigation â”€â”€
   function showPage(name) {
     if (localBackupsInterval) {
       clearInterval(localBackupsInterval);
       localBackupsInterval = null;
+    }
+    if (tempRankRefreshTimer) {
+      clearInterval(tempRankRefreshTimer);
+      tempRankRefreshTimer = null;
+    }
+    if (pollRefreshTimer) {
+      clearInterval(pollRefreshTimer);
+      pollRefreshTimer = null;
     }
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -1685,11 +2290,15 @@
     if (name === 'gameserver') initGameServerPage();
     if (name === 'wipeplanner') initWipePlannerPage();
     if (name === 'serversettings') initServerSettingsPage();
+    if (name === 'banapprovals') bakRefreshAll();
     if (name === 'eventscheduler') initEvtSchedPage();
+    if (name === 'temprank') initTempRankPage();
+    if (name === 'polls') initPollPage();
     if (name === 'events') fetchEvents();
+    if (name === 'wordfilter') initWordFilterPage();
   }
 
-  // ── Helpers ──
+  // â”€â”€ Helpers â”€â”€
   function timeAgo(dateStr) {
     const d = new Date(dateStr);
     const diff = Date.now() - d.getTime();
@@ -1704,7 +2313,7 @@
     return `${h}h ${m}m`;
   }
 
-  // ── Event Scheduler ──────────────────────────────────────────────────────
+  // â”€â”€ Event Scheduler â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   async function apiFetch(url, options = {}) {
     if (!options.headers) options.headers = {};
     if (options.body && !options.headers['Content-Type']) {
@@ -1756,9 +2365,9 @@
         // Status box
         const status = document.getElementById(`evtsched-status-${type}`);
         const lastFired  = r.last_fired  ? fmtDate(r.last_fired)  : 'Never';
-        const nextFire   = r.next_fire   ? fmtDate(r.next_fire)   : '—';
+        const nextFire   = r.next_fire   ? fmtDate(r.next_fire)   : 'â€”';
         const wipeTime   = r.wipe_time   ? fmtDate(r.wipe_time)   : 'Not set';
-        status.innerHTML = `<span style="color:var(--text)">Last fired:</span> ${lastFired}&nbsp;&nbsp;·&nbsp;&nbsp;<span style="color:var(--text)">Next fire:</span> ${nextFire}<br><span style="color:var(--text)">Wipe anchor:</span> ${wipeTime}`;
+        status.innerHTML = `<span style="color:var(--text)">Last fired:</span> ${lastFired}&nbsp;&nbsp;Â·&nbsp;&nbsp;<span style="color:var(--text)">Next fire:</span> ${nextFire}<br><span style="color:var(--text)">Wipe anchor:</span> ${wipeTime}`;
       });
     } catch (e) {
       console.error('[EventSched] Load failed:', e.message);
@@ -1788,11 +2397,11 @@
         discord_channel_id: document.getElementById(`evtsched-channel-${type}`).value.trim(),
       };
       await apiFetch('/api/eventscheduler/config', { method:'POST', body: JSON.stringify(body) });
-      msg.textContent = '✅ Saved';
+      msg.textContent = 'âœ… Saved';
       msg.style.color = 'var(--green)';
       await evtSchedLoad();
     } catch (e) {
-      msg.textContent = '❌ ' + e.message;
+      msg.textContent = 'âŒ ' + e.message;
       msg.style.color = 'var(--red)';
     }
     setTimeout(() => { msg.textContent = ''; }, 3000);
@@ -1808,11 +2417,11 @@
         method:'POST',
         body: JSON.stringify({ server_id: evtSchedServerId, event_type: type })
       });
-      msg.textContent = '✅ Event fired!';
+      msg.textContent = 'âœ… Event fired!';
       msg.style.color = 'var(--green)';
       await evtSchedLoad();
     } catch (e) {
-      msg.textContent = '❌ ' + e.message;
+      msg.textContent = 'âŒ ' + e.message;
       msg.style.color = 'var(--red)';
     }
     setTimeout(() => { msg.textContent = ''; }, 4000);
@@ -1839,14 +2448,14 @@
         method:'POST',
         body: JSON.stringify({ server_id: evtSchedServerId, wipe_time: wipeISO })
       });
-      msgEl.textContent = '✅ Wipe time set — schedules recalculated';
+      msgEl.textContent = 'âœ… Wipe time set â€” schedules recalculated';
       msgEl.style.color = 'var(--green)';
       setTimeout(() => {
         document.getElementById('evtsched-wipe-modal').style.display = 'none';
         evtSchedLoad();
       }, 1500);
     } catch (e) {
-      msgEl.textContent = '❌ ' + e.message;
+      msgEl.textContent = 'âŒ ' + e.message;
       msgEl.style.color = 'var(--red)';
     }
   }
@@ -1862,9 +2471,9 @@
       }
       tbody.innerHTML = rows.map(r => {
         const badge = r.success
-          ? `<span style="color:var(--green);font-weight:600;">✅ Success</span>`
-          : `<span style="color:var(--red);font-weight:600;">❌ Failed</span>`;
-        const typeLabel = r.event_type === 'koth' ? '🏆 KOTH' : '🌀 Maze';
+          ? `<span style="color:var(--green);font-weight:600;">âœ… Success</span>`
+          : `<span style="color:var(--red);font-weight:600;">âŒ Failed</span>`;
+        const typeLabel = r.event_type === 'koth' ? 'ðŸ† KOTH' : 'ðŸŒ€ Maze';
         return `<tr>
           <td>${typeLabel}</td>
           <td style="color:var(--muted);font-size:12px;">${fmtDate(r.fired_at)}</td>
@@ -1876,6 +2485,311 @@
       tbody.innerHTML = `<tr><td colspan="4" style="color:var(--red);">${e.message}</td></tr>`;
     }
   }
+
+  // â”€â”€ Temp VIP Ranks â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  let tempRankRefreshTimer = null;
+  let pollRefreshTimer = null;
+
+  async function initTempRankPage() {
+    if (tempRankRefreshTimer) clearInterval(tempRankRefreshTimer);
+    await tempRankLoadActive();
+    await tempRankLoadMassRecipients();
+    await tempRankLoadLog();
+    tempRankRefreshTimer = setInterval(tempRankLoadActive, 30_000);
+  }
+
+  async function tempRankLoadMassRecipients() {
+    const tbody = document.getElementById('tr-mass-body');
+    const countEl = document.getElementById('tr-mass-count');
+    const permOnly = document.getElementById('tr-mass-filter-perm')?.checked;
+    try {
+      const qs = permOnly ? '?perm=1&limit=300' : '?limit=300';
+      const rows = await apiFetch('/api/temprank/mass-recipients' + qs);
+      countEl.textContent = `${rows.length} recipient(s)`;
+      if (!rows.length) {
+        tbody.innerHTML = '<tr><td colspan="7" style="padding:16px;color:var(--muted);">No mass grant recipients yet.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = rows.map(r => `
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 8px;font-weight:600;">${escapeHtml(r.display_name)}</td>
+          <td style="padding:10px 8px;"><code>${escapeHtml(r.steam_id)}</code></td>
+          <td style="padding:10px 8px;">${escapeHtml(r.rank_label || r.rank)}</td>
+          <td style="padding:10px 8px;">${r.is_perm ? '<span style="color:var(--accent);font-weight:700;">Permanent</span>' : escapeHtml(r.type_label || `${r.days} day(s)`)}</td>
+          <td style="padding:10px 8px;color:var(--muted);font-size:12px;">${escapeHtml(r.granted_label || r.granted_at)}</td>
+          <td style="padding:10px 8px;color:var(--muted);font-size:12px;">${escapeHtml(r.granted_by || 'â€”')}</td>
+          <td style="padding:10px 8px;color:var(--muted);font-size:11px;"><code>${escapeHtml(String(r.batch_id || '').slice(-8))}</code></td>
+        </tr>
+      `).join('');
+    } catch (e) {
+      tbody.innerHTML = `<tr><td colspan="7" style="padding:16px;color:var(--red);">${escapeHtml(e.message)}</td></tr>`;
+      countEl.textContent = 'Error';
+    }
+  }
+
+  async function tempRankLoadActive() {
+    const tbody = document.getElementById('tr-active-body');
+    const countEl = document.getElementById('tr-active-count');
+    try {
+      const rows = await apiFetch('/api/temprank/active');
+      countEl.textContent = `${rows.length} active`;
+      if (!rows.length) {
+        tbody.innerHTML = '<tr><td colspan="7" style="padding:16px;color:var(--muted);">No active temporary VIP ranks.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = rows.map(r => `
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 8px;font-weight:600;">${escapeHtml(r.display_name)}</td>
+          <td style="padding:10px 8px;"><code>${escapeHtml(r.steam_id)}</code></td>
+          <td style="padding:10px 8px;">${escapeHtml(r.rank_label || r.rank)}</td>
+          <td style="padding:10px 8px;color:var(--accent);font-weight:700;">${escapeHtml(r.countdown || 'â€”')}</td>
+          <td style="padding:10px 8px;color:var(--muted);font-size:12px;">${escapeHtml(r.expires_label || r.expires_at)}</td>
+          <td style="padding:10px 8px;color:var(--muted);font-size:12px;">${escapeHtml(r.granted_by || 'â€”')}</td>
+          <td style="padding:10px 8px;">
+            <button class="btn" style="padding:6px 10px;font-size:11px;background:var(--surface);border:1px solid var(--border);color:var(--red);" onclick="tempRankRevoke('${escapeHtml(r.steam_id)}', '${escapeHtml(r.rank)}')">Revoke</button>
+          </td>
+        </tr>
+      `).join('');
+    } catch (e) {
+      tbody.innerHTML = `<tr><td colspan="7" style="padding:16px;color:var(--red);">${escapeHtml(e.message)}</td></tr>`;
+      countEl.textContent = 'Error';
+    }
+  }
+
+  async function tempRankLoadLog() {
+    const el = document.getElementById('tr-log-list');
+    try {
+      const rows = await apiFetch('/api/temprank/log?limit=30');
+      if (!rows.length) {
+        el.textContent = 'No log entries yet.';
+        return;
+      }
+      el.innerHTML = rows.map(r =>
+        `<div style="padding:8px 0;border-bottom:1px solid var(--border);">
+          <strong>${escapeHtml(r.action)}</strong> Â· ${escapeHtml(r.display_name || r.steam_id)} Â· ${escapeHtml(r.rank || 'â€”')} Â· ${escapeHtml(r.actor || 'â€”')} Â· ${fmtDate(r.created_at)}
+        </div>`
+      ).join('');
+    } catch (e) {
+      el.textContent = 'Error: ' + e.message;
+    }
+  }
+
+  async function tempRankGrant() {
+    const msg = document.getElementById('tr-grant-msg');
+    const steamId = document.getElementById('tr-steamid').value.trim();
+    const displayName = document.getElementById('tr-name').value.trim();
+    const rank = document.getElementById('tr-rank').value;
+    const days = parseInt(document.getElementById('tr-days').value, 10);
+    msg.textContent = 'Granting...';
+    msg.style.color = 'var(--muted)';
+    try {
+      const result = await apiFetch('/api/temprank/grant', {
+        method: 'POST',
+        body: JSON.stringify({ steamId, rank, days, displayName: displayName || undefined })
+      });
+      msg.textContent = `Granted ${result.grant.rankLabel} to ${steamId} for ${days} day(s).`;
+      msg.style.color = 'var(--green)';
+      document.getElementById('tr-steamid').value = '';
+      document.getElementById('tr-name').value = '';
+      await tempRankLoadActive();
+      await tempRankLoadLog();
+    } catch (e) {
+      msg.textContent = e.message;
+      msg.style.color = 'var(--red)';
+    }
+  }
+
+  async function tempRankGrantPerm() {
+    const msg = document.getElementById('tr-perm-msg');
+    const steamId = document.getElementById('tr-perm-steamid').value.trim();
+    const displayName = document.getElementById('tr-perm-name').value.trim();
+    const rank = document.getElementById('tr-perm-rank').value;
+    if (!/^\d{17}$/.test(steamId)) {
+      msg.textContent = 'Invalid SteamID64';
+      msg.style.color = 'var(--red)';
+      return;
+    }
+    if (!confirm(`Grant permanent ${rank} (lifetime VIP) to ${steamId}?`)) return;
+    msg.textContent = 'Granting lifetime VIP...';
+    msg.style.color = 'var(--muted)';
+    try {
+      const result = await apiFetch('/api/temprank/perm', {
+        method: 'POST',
+        body: JSON.stringify({ steamId, rank, displayName: displayName || undefined })
+      });
+      msg.textContent = `Granted ${result.grant.rankLabel} (${result.grant.permGroup}) to ${steamId}.`;
+      msg.style.color = 'var(--green)';
+      document.getElementById('tr-perm-steamid').value = '';
+      document.getElementById('tr-perm-name').value = '';
+      await tempRankLoadLog();
+    } catch (e) {
+      msg.textContent = e.message;
+      msg.style.color = 'var(--red)';
+    }
+  }
+
+  async function tempRankPermRevoke() {
+    const msg = document.getElementById('tr-perm-msg');
+    const steamId = document.getElementById('tr-perm-steamid').value.trim();
+    const rank = document.getElementById('tr-perm-rank').value;
+    if (!/^\d{17}$/.test(steamId)) {
+      msg.textContent = 'Invalid SteamID64';
+      msg.style.color = 'var(--red)';
+      return;
+    }
+    if (!confirm(`Revoke permanent ${rank} from ${steamId}?`)) return;
+    msg.textContent = 'Revoking lifetime VIP...';
+    msg.style.color = 'var(--muted)';
+    try {
+      await apiFetch('/api/temprank/permrevoke', {
+        method: 'POST',
+        body: JSON.stringify({ steamId, rank })
+      });
+      msg.textContent = `Revoked permanent ${rank} from ${steamId}.`;
+      msg.style.color = 'var(--green)';
+      await tempRankLoadLog();
+    } catch (e) {
+      msg.textContent = e.message;
+      msg.style.color = 'var(--red)';
+    }
+  }
+
+  function parseMassRecipientLines(text) {
+    const recipients = [];
+    const seen = new Set();
+    const lines = String(text || '').split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+    const add = (steamId, displayName) => {
+      if (!/^\d{17}$/.test(steamId) || seen.has(steamId)) return;
+      seen.add(steamId);
+      const name = String(displayName || '').trim();
+      recipients.push({ steamId, displayName: name || steamId });
+    };
+    if (lines.length) {
+      for (const line of lines) {
+        const m = line.match(/\b(\d{17})\b/);
+        if (!m) continue;
+        const steamId = m[1];
+        const namePart = line.replace(steamId, '').replace(/^[\s,:;|\t-]+|[\s,:;|\t-]+$/g, '').trim();
+        add(steamId, namePart);
+      }
+    }
+    if (!recipients.length) {
+      for (const token of String(text || '').split(/[\s,;]+/)) {
+        const id = token.trim();
+        if (/^\d{17}$/.test(id)) add(id, id);
+      }
+    }
+    return recipients;
+  }
+
+  async function tempRankMassGrant() {
+    const msg = document.getElementById('tr-mass-msg');
+    const rank = document.getElementById('tr-mass-rank').value;
+    const daysRaw = document.getElementById('tr-mass-days').value.trim();
+    const perm = document.getElementById('tr-mass-perm').checked;
+    const recordOnly = document.getElementById('tr-mass-record-only').checked;
+    const steamIds = document.getElementById('tr-mass-ids').value;
+    const recipients = parseMassRecipientLines(steamIds);
+
+    if (!recipients.length) {
+      msg.textContent = 'No valid SteamID64 found in list';
+      msg.style.color = 'var(--red)';
+      return;
+    }
+    if (!perm && !daysRaw) {
+      msg.textContent = 'Enter days or check Permanent';
+      msg.style.color = 'var(--red)';
+      return;
+    }
+
+    const days = perm ? 0 : parseInt(daysRaw, 10);
+    if (!perm && (!days || days < 1)) {
+      msg.textContent = 'Days must be at least 1';
+      msg.style.color = 'var(--red)';
+      return;
+    }
+
+    if (!confirm(`${recordOnly ? 'Record' : 'Mass grant'} ${rank} (${perm ? 'permanent lifetime' : days + ' days'}) for ${recipients.length} player(s)?`)) return;
+
+    msg.textContent = recordOnly ? `Recording ${recipients.length} player(s)...` : `Granting ${recipients.length} player(s)...`;
+    msg.style.color = 'var(--muted)';
+    try {
+      const endpoint = recordOnly ? '/api/temprank/mass-recipients/backfill' : '/api/temprank/massgrant';
+      const payload = recordOnly
+        ? { rank, days, perm, recipients }
+        : { rank, days, perm, steamIds };
+      const result = await apiFetch(endpoint, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      });
+      const count = result.result?.count ?? result.count;
+      const label = result.result?.rankLabel ?? rank;
+      msg.textContent = recordOnly
+        ? `Recorded ${count} player(s) in mass grant list (${label}, ${perm ? 'permanent' : days + ' days'}).`
+        : `Mass grant complete: ${count} player(s) received ${label} (${perm ? 'permanent' : days + ' days'}).`;
+      msg.style.color = 'var(--green)';
+      if (!recordOnly && !perm) await tempRankLoadActive();
+      await tempRankLoadMassRecipients();
+      await tempRankLoadLog();
+    } catch (e) {
+      msg.textContent = e.message;
+      msg.style.color = 'var(--red)';
+    }
+  }
+
+  async function tempRankRevoke(steamId, rank) {
+    const label = rank ? ` ${rank}` : ' all temp VIP for';
+    if (!confirm(`Revoke${label} for ${steamId}?`)) return;
+    try {
+      await apiFetch('/api/temprank/revoke', { method: 'POST', body: JSON.stringify({ steamId, rank: rank || undefined }) });
+      await tempRankLoadActive();
+      await tempRankLoadLog();
+    } catch (e) {
+      alert(e.message);
+    }
+  }
+
+  async function tempRankRevokeAll() {
+    const countEl = document.getElementById('tr-active-count');
+    const countText = countEl?.textContent || '';
+    if (!confirm(`Remove ALL active temp VIP ranks?${countText ? ` (${countText})` : ''}\n\nThis cannot be undone.`)) return;
+    try {
+      const result = await apiFetch('/api/temprank/revoke-all', { method: 'POST', body: '{}' });
+      alert(result.count ? `Removed ${result.count} temp VIP rank(s).` : 'No active temp VIP ranks.');
+      await tempRankLoadActive();
+      await tempRankLoadLog();
+    } catch (e) {
+      alert(e.message);
+    }
+  }
+
+  async function tempRankRefreshDiscord() {
+    try {
+      await apiFetch('/api/temprank/refresh-discord', { method: 'POST', body: '{}' });
+      alert('Discord overview refreshed.');
+    } catch (e) {
+      alert(e.message);
+    }
+  }
+
+  async function resetAllPvpStats() {
+    if (!confirm(
+      'Reset ALL player kill/death stats?\n\n' +
+      'This clears K/D on both the current wipe and all-time records. ' +
+      'Other stats (gather, events, score, etc.) are kept.'
+    )) return;
+    try {
+      await apiFetch('/api/mercystats/reset-pvp', { method: 'POST', body: '{}' });
+      alert('Kill/death stats reset.');
+    } catch (e) {
+      alert(e.message);
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
   function countdown(isoDate) {
     const ms = new Date(isoDate) - Date.now();
     if (ms <= 0) return 'Ended';
@@ -1883,7 +2797,7 @@
     return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
   }
 
-  // ── Data Fetching ──
+  // â”€â”€ Data Fetching â”€â”€
   async function fetchStatus() {
     try {
       const r = await fetch('/api/status');
@@ -1892,9 +2806,9 @@
       const dot = document.getElementById('statusDot');
       dot.className = 'status-dot ' + (d.online ? '' : 'offline');
       document.getElementById('statusTag').textContent = d.tag || 'Offline';
-      document.getElementById('statusGuild').textContent = d.guildName || '—';
-      document.getElementById('statMembers').textContent = d.memberCount ?? '—';
-      document.getElementById('statFeatures').textContent = d.features?.length ?? '—';
+      document.getElementById('statusGuild').textContent = d.guildName || 'â€”';
+      document.getElementById('statMembers').textContent = d.memberCount ?? 'â€”';
+      document.getElementById('statFeatures').textContent = d.features?.length ?? 'â€”';
       document.getElementById('statUptime').textContent = fmtUptime(d.uptime || 0);
 
       if (d.recentEvents) renderEvents(d.recentEvents, 'overviewEvents', 5);
@@ -1913,10 +2827,10 @@
           <td>#${v.id}</td>
           <td><span class="badge ${v.ended ? 'badge-ended' : 'badge-active'}">${v.ended ? 'Ended' : 'Active'}</span></td>
           <td>${v.maps.map((m,i) => `<a href="${m.url}" target="_blank">Map ${i+1} (${m.size})</a>`).join(', ')}</td>
-          <td>${v.started_by || '—'}</td>
+          <td>${v.started_by || 'â€”'}</td>
           <td>${v.totalVoters}</td>
           <td>${fmtDate(v.created_at)}</td>
-          <td>${v.ended ? '—' : `<span id="ctd-${v.id}">${countdown(v.ends_at)}</span>`}</td>
+          <td>${v.ended ? 'â€”' : `<span id="ctd-${v.id}">${countdown(v.ends_at)}</span>`}</td>
         </tr>
       `).join('');
     } catch(e) {}
@@ -1938,7 +2852,7 @@
 
       if (!votes || votes.length === 0) {
         banner.innerHTML = '';
-        voteContent.innerHTML = '<div class="empty-state"><div class="icon">🗺️</div><p>No active map votes. You can start one above!</p></div>';
+        voteContent.innerHTML = '<div class="empty-state"><div class="icon">ðŸ—ºï¸</div><p>No active map votes. You can start one above!</p></div>';
         btnCreateVote.disabled = false;
         createVoteStatus.textContent = '';
         return;
@@ -1957,7 +2871,7 @@
         const total = Object.values(vote.results || {}).reduce((a,b) => a+b, 0);
         const pct = mapIndex => total > 0 ? Math.round((vote.results[mapIndex] || 0) / total * 100) : 0;
         const colors = ['c1','c2','c3'];
-        const emojis = ['1️⃣','2️⃣','3️⃣'];
+        const emojis = ['1ï¸âƒ£','2ï¸âƒ£','3ï¸âƒ£'];
         const serverName = vote.server_name || 'Global';
 
         const mapCards = vote.maps.map((m,i) => {
@@ -1969,7 +2883,7 @@
               <div class="map-num">${emojis[i]} Map ${mapIndex}</div>
               <div style="font-weight:600;font-size:13px;margin-top:4px">Size: ${m.size} | Seed: ${m.seed}</div>
               <div class="map-details">Monuments: ${m.monuments}</div>
-              <a href="${m.url}" target="_blank">View on Rustmaps ↗</a>
+              <a href="${m.url}" target="_blank">View on Rustmaps â†—</a>
               <div class="vote-bar-wrap" style="margin-top:8px">
                 <div class="vote-bar ${colors[i]}" style="width:${pct(mapIndex)}%"></div>
               </div>
@@ -2004,13 +2918,13 @@
         voteBlock.innerHTML = `
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
             <div>
-              <h3 style="margin:0; color:var(--text); font-size:18px;">🗳️ Active Vote: ${serverName}</h3>
-              <p style="margin:4px 0 0; color:var(--muted); font-size:13px;">${vote.totalVoters} voter${vote.totalVoters!==1?'s':''} • closes in <span id="overview-ctd-${vote.id}">${countdown(vote.ends_at)}</span></p>
+              <h3 style="margin:0; color:var(--text); font-size:18px;">ðŸ—³ï¸ Active Vote: ${serverName}</h3>
+              <p style="margin:4px 0 0; color:var(--muted); font-size:13px;">${vote.totalVoters} voter${vote.totalVoters!==1?'s':''} â€¢ closes in <span id="overview-ctd-${vote.id}">${countdown(vote.ends_at)}</span></p>
             </div>
             <button class="btn btn-danger" onclick="endVote(${vote.id})">End Vote Now</button>
           </div>
           <div class="vote-maps" style="margin-bottom: 16px;">${voteBars}</div>
-          <div class="card-title" style="margin-bottom:12px; font-size:14px;">📍 Maps in This Vote</div>
+          <div class="card-title" style="margin-bottom:12px; font-size:14px;">ðŸ“ Maps in This Vote</div>
           <div class="map-cards">${mapCards}</div>
         `;
         
@@ -2042,7 +2956,7 @@
         <div class="event-dot ${e.type}"></div>
         <div>
           <div class="event-msg">${e.message}</div>
-          <div class="event-time">${e.feature || 'core'} • ${timeAgo(e.created_at)}</div>
+          <div class="event-time">${e.feature || 'core'} â€¢ ${timeAgo(e.created_at)}</div>
         </div>
       </div>`).join('');
   }
@@ -2070,7 +2984,7 @@
         <tr>
           <td>#${m.id}</td>
           <td><a href="${m.rustmaps_url}" target="_blank" style="color:var(--accent)">${m.rustmaps_url.split('/').pop().substring(0,8)}...</a></td>
-          <td>${m.download_url ? `<a href="${m.download_url}" target="_blank" style="color:var(--accent)">Link</a>` : '—'}</td>
+          <td>${m.download_url ? `<a href="${m.download_url}" target="_blank" style="color:var(--accent)">Link</a>` : 'â€”'}</td>
           <td>${fmtDate(m.added_at)}</td>
           <td><button class="btn btn-danger" style="padding:4px 8px;font-size:11px" onclick="deleteFromPool(${m.id})">Delete</button></td>
         </tr>
@@ -2183,7 +3097,7 @@
     }
   }
 
-  // ── Countdown tickers ──
+  // â”€â”€ Countdown tickers â”€â”€
   function tickCountdowns() {
     document.querySelectorAll('[id^="overview-ctd-"], [id$="-ctd"]').forEach(el => {
       if (el._endsAt) el.textContent = countdown(el._endsAt);
@@ -2191,7 +3105,7 @@
   }
 
   
-    // ── SERVERS LOGIC ──
+    // â”€â”€ SERVERS LOGIC â”€â”€
     async function loadServers() {
       try {
         const res = await fetch('/api/mapvote/servers');
@@ -2279,7 +3193,7 @@
     window.location.href = '/api/auth/logout';
   }
 
-  // ── Auth Fetch ──
+  // â”€â”€ Auth Fetch â”€â”€
   async function checkAuth() {
     try {
       const r = await fetch('/api/auth/me');
@@ -2299,7 +3213,7 @@
     }
   }
 
-  // ── Refresh loop ──
+  // â”€â”€ Refresh loop â”€â”€
   async function refresh() {
     await Promise.all([fetchStatus(), fetchActiveVote(), fetchVoteHistory(), fetchEvents(), fetchMapPool()]);
   }
@@ -2315,7 +3229,7 @@
 
   init();
 
-    // ── Announcement ──
+    // â”€â”€ Announcement â”€â”€
     async function fetchAnnounceChannels() {
         try {
             let res = await fetch('/api/announcement/channels');
@@ -2397,16 +3311,16 @@
             const data = await res.json();
             if (data.success) {
                 resDiv.style.color = '#10b981'; // green
-                resDiv.innerText = '✅ Announcement sent successfully!';
+                resDiv.innerText = 'âœ… Announcement sent successfully!';
                 e.target.reset();
                 updatePreview();
             } else {
                 resDiv.style.color = '#ef4444'; // red
-                resDiv.innerText = '❌ Error: ' + (data.error || 'Failed to send');
+                resDiv.innerText = 'âŒ Error: ' + (data.error || 'Failed to send');
             }
         } catch(err) {
             resDiv.style.color = '#ef4444';
-            resDiv.innerText = '❌ Error: ' + err.message;
+            resDiv.innerText = 'âŒ Error: ' + err.message;
         }
 
         btn.disabled = false;
@@ -2416,7 +3330,236 @@
     // Load channels on initial fetch
     fetchAnnounceChannels();
 
-    // ── Ticket Bot (full dashboard) ──
+    // â”€â”€ Polls â”€â”€
+    const POLL_EMOJIS = ['1ï¸âƒ£','2ï¸âƒ£','3ï¸âƒ£','4ï¸âƒ£','5ï¸âƒ£','6ï¸âƒ£','7ï¸âƒ£','8ï¸âƒ£','9ï¸âƒ£','ðŸ”Ÿ'];
+
+    function pollDefaultOptions() {
+      return ['Option 1', 'Option 2', 'Option 3'];
+    }
+
+    function pollRenderOptionInputs(values) {
+      const list = document.getElementById('poll-options-list');
+      if (!list) return;
+      list.innerHTML = values.map((value, index) => `
+        <div style="display:flex; gap:8px; align-items:center;">
+          <span style="width:24px; text-align:center; color:var(--muted);">${POLL_EMOJIS[index] || 'â€¢'}</span>
+          <input type="text" class="poll-option-input" data-index="${index}" value="${value.replace(/"/g, '&quot;')}" maxlength="100" placeholder="Option ${index + 1}" style="flex:1; padding:10px; background:rgba(0,0,0,0.2); border:1px solid var(--border); color:#fff; border-radius:6px;">
+          ${values.length > 2 ? `<button type="button" class="btn btn-sm" style="background:var(--surface); border:1px solid var(--border); color:var(--red);" onclick="pollRemoveOption(${index})">âœ•</button>` : '<span style="width:34px"></span>'}
+        </div>
+      `).join('');
+      list.querySelectorAll('.poll-option-input').forEach(input => {
+        input.addEventListener('input', updatePollPreview);
+      });
+      updatePollPreview();
+    }
+
+    function pollGetOptionValues() {
+      return [...document.querySelectorAll('.poll-option-input')]
+        .map(input => input.value.trim())
+        .filter(Boolean);
+    }
+
+    window.pollAddOption = function() {
+      const values = pollGetOptionValues();
+      if (values.length >= 10) return;
+      values.push(`Option ${values.length + 1}`);
+      pollRenderOptionInputs(values);
+    };
+
+    window.pollRemoveOption = function(index) {
+      const values = pollGetOptionValues();
+      if (values.length <= 2) return;
+      values.splice(index, 1);
+      pollRenderOptionInputs(values);
+    };
+
+    function pollDurationLabel() {
+      const value = parseInt(document.getElementById('poll-duration-value')?.value || '0', 10);
+      const unit = document.getElementById('poll-duration-unit')?.value || 'h';
+      if (!value) return 'soon';
+      if (unit === 'm') return `${value} minute${value === 1 ? '' : 's'}`;
+      if (unit === 'd') return `${value} day${value === 1 ? '' : 's'}`;
+      return `${value} hour${value === 1 ? '' : 's'}`;
+    }
+
+    function updatePollPreview() {
+      const title = document.getElementById('poll-title')?.value.trim() || 'Poll headline';
+      const description = document.getElementById('poll-description')?.value.trim() || '';
+      const options = pollGetOptionValues();
+      const previewTitle = document.getElementById('poll-preview-title');
+      const previewDescription = document.getElementById('poll-preview-description');
+      const previewOptions = document.getElementById('poll-preview-options');
+      const previewMeta = document.getElementById('poll-preview-meta');
+      const previewButtons = document.getElementById('poll-preview-buttons');
+
+      if (previewTitle) previewTitle.textContent = `ðŸ“Š ${title}`;
+      if (previewDescription) {
+        previewDescription.style.display = description ? 'block' : 'none';
+        previewDescription.textContent = description;
+      }
+      if (previewOptions) {
+        previewOptions.innerHTML = (options.length ? options : ['Option 1', 'Option 2']).map((label, i) => `
+          <div>
+            <div style="font-weight:600; margin-bottom:4px;">${POLL_EMOJIS[i]} ${label}</div>
+            <div style="color:#949ba4; font-family:monospace; font-size:12px;">\`â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘â–‘\` 0% (0 votes)</div>
+          </div>
+        `).join('');
+      }
+      if (previewMeta) {
+        previewMeta.textContent = `0 votes so far Â· Closes in ${pollDurationLabel()}`;
+      }
+      if (previewButtons) {
+        previewButtons.innerHTML = (options.length ? options : ['Option 1', 'Option 2']).slice(0, 5).map((label, i) => `
+          <span style="display:inline-block; padding:6px 10px; background:#5865f2; color:#fff; border-radius:4px; font-size:12px; font-weight:600;">${POLL_EMOJIS[i]} ${label} Â· 0</span>
+        `).join('');
+      }
+    }
+
+    async function fetchPollChannels() {
+      const select = document.getElementById('poll-channel');
+      if (!select) return;
+      try {
+        const res = await fetch('/api/poll/channels');
+        const channels = await res.json();
+        if (!channels.length) {
+          select.innerHTML = '<option value="">No channels found</option>';
+          return;
+        }
+        select.innerHTML = channels.map(c => `<option value="${c.id}">#${c.name}</option>`).join('');
+      } catch (e) {
+        console.error('[Polls] Failed to load channels', e);
+        select.innerHTML = '<option value="">Failed to load channels</option>';
+      }
+    }
+
+    async function loadActivePolls() {
+      const container = document.getElementById('poll-active-content');
+      if (!container) return;
+      try {
+        const res = await fetch('/api/poll/active');
+        const polls = await res.json();
+        if (!res.ok) throw new Error(polls.error || 'Failed to load polls');
+        if (!polls.length) {
+          container.innerHTML = '<div class="empty-state"><div class="icon">ðŸ“Š</div><p>No active polls. Create one above!</p></div>';
+          return;
+        }
+
+        container.innerHTML = polls.map(poll => {
+          const total = Object.values(poll.results || {}).reduce((a, b) => a + b, 0);
+          const pct = idx => total > 0 ? Math.round(((poll.results[idx] || 0) / total) * 100) : 0;
+          const bars = poll.options.map((label, i) => {
+            const idx = i + 1;
+            const p = pct(idx);
+            const votes = poll.results[idx] || 0;
+            return `
+              <div class="vote-map-row" style="margin-bottom:10px;">
+                <div class="vote-map-header">
+                  <span>${POLL_EMOJIS[i]} ${label}</span>
+                  <span>${votes} vote${votes === 1 ? '' : 's'}</span>
+                </div>
+                <div class="vote-bar-wrap">
+                  <div class="vote-bar c${(i % 3) + 1}" style="width:${p}%"></div>
+                </div>
+                <div class="vote-pct">${p}%</div>
+              </div>`;
+          }).join('');
+
+          return `
+            <div style="margin-bottom:18px; padding:16px; border:1px solid var(--border); border-radius:8px; background:var(--card);">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:14px; border-bottom:1px solid var(--border); padding-bottom:12px;">
+                <div>
+                  <h3 style="margin:0; font-size:18px;">ðŸ“Š ${poll.title}</h3>
+                  <p style="margin:4px 0 0; color:var(--muted); font-size:13px;">
+                    #${poll.channelName || poll.channel_id} Â· ${poll.totalVoters} voter${poll.totalVoters === 1 ? '' : 's'} Â· closes in
+                    <span class="poll-countdown" data-ends-at="${poll.ends_at}">${countdown(poll.ends_at)}</span>
+                  </p>
+                  ${poll.description ? `<p style="margin:8px 0 0; color:var(--text); font-size:13px;">${poll.description}</p>` : ''}
+                </div>
+                <button class="btn btn-danger btn-sm" onclick="endPoll(${poll.id})">End Poll</button>
+              </div>
+              ${bars}
+            </div>`;
+        }).join('');
+      } catch (e) {
+        container.innerHTML = `<div class="empty-state"><div class="icon">âš ï¸</div><p>${e.message}</p></div>`;
+      }
+    }
+
+    window.endPoll = async function(pollId) {
+      if (!confirm('End this poll now and announce results?')) return;
+      try {
+        const res = await fetch('/api/poll/end', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ pollId })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to end poll');
+        await loadActivePolls();
+      } catch (e) {
+        alert('Error: ' + e.message);
+      }
+    };
+
+    function initPollPage() {
+      fetchPollChannels();
+      if (!document.querySelector('.poll-option-input')) {
+        pollRenderOptionInputs(pollDefaultOptions());
+      } else {
+        updatePollPreview();
+      }
+      loadActivePolls();
+      if (pollRefreshTimer) clearInterval(pollRefreshTimer);
+      pollRefreshTimer = setInterval(loadActivePolls, 10000);
+    }
+
+    document.getElementById('poll-title')?.addEventListener('input', updatePollPreview);
+    document.getElementById('poll-description')?.addEventListener('input', updatePollPreview);
+    document.getElementById('poll-duration-value')?.addEventListener('input', updatePollPreview);
+    document.getElementById('poll-duration-unit')?.addEventListener('change', updatePollPreview);
+
+    document.getElementById('poll-form')?.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const resultDiv = document.getElementById('poll-form-result');
+      const options = pollGetOptionValues();
+
+      btn.disabled = true;
+      btn.textContent = 'Posting...';
+      resultDiv.textContent = '';
+      resultDiv.style.color = 'var(--text)';
+
+      try {
+        const res = await fetch('/api/poll/create', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            channelId: document.getElementById('poll-channel').value,
+            title: document.getElementById('poll-title').value.trim(),
+            description: document.getElementById('poll-description').value.trim(),
+            options,
+            durationValue: parseInt(document.getElementById('poll-duration-value').value, 10),
+            durationUnit: document.getElementById('poll-duration-unit').value,
+            ping: document.getElementById('poll-ping').value
+          })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to post poll');
+        resultDiv.style.color = '#10b981';
+        resultDiv.textContent = 'âœ… Poll posted to Discord!';
+        await loadActivePolls();
+      } catch (err) {
+        resultDiv.style.color = '#ef4444';
+        resultDiv.textContent = 'âŒ ' + err.message;
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Post Poll to Discord';
+    });
+
+    pollRenderOptionInputs(pollDefaultOptions());
+
+    // â”€â”€ Ticket Bot (full dashboard) â”€â”€
     let ticketConfig = { panel: {}, types: {} };
     let currentTicketType = null;
 
@@ -2544,6 +3687,8 @@
       document.getElementById('p-footer').value = p.footer || '';
       document.getElementById('p-category').value = p.categoryName || '';
       document.getElementById('p-channel').value = p.channelName || '';
+      document.getElementById('p-channel-id').value = p.channelId || '';
+      document.getElementById('p-message-id').value = p.messageId || '';
     }
 
     function readPanelEditor() {
@@ -2553,7 +3698,9 @@
         color: document.getElementById('p-color').value.trim(),
         footer: document.getElementById('p-footer').value.trim(),
         categoryName: document.getElementById('p-category').value.trim(),
-        channelName: document.getElementById('p-channel').value.trim()
+        channelName: document.getElementById('p-channel').value.trim(),
+        channelId: document.getElementById('p-channel-id').value.trim(),
+        messageId: document.getElementById('p-message-id').value.trim()
       };
     }
 
@@ -2567,7 +3714,9 @@
         emoji: document.getElementById('t-emoji').value.trim(),
         color: document.getElementById('t-color').value.trim(),
         category: document.getElementById('t-category').value.trim(),
+        categoryId: document.getElementById('t-category-id').value.trim(),
         inboxChannel: document.getElementById('t-inbox').value.trim(),
+        staffRoles: document.getElementById('t-staff-roles').value.split(/\r?\n/).map(s => s.trim()).filter(Boolean),
         showInPanel: document.getElementById('t-show-panel').checked,
         panelLabel: document.getElementById('t-panel-label').value.trim(),
         panelStyle: document.getElementById('t-panel-style').value,
@@ -2608,7 +3757,9 @@
       document.getElementById('t-emoji').value = t.emoji || '';
       document.getElementById('t-color').value = t.color || '';
       document.getElementById('t-category').value = t.category || '';
+      document.getElementById('t-category-id').value = t.categoryId || '';
       document.getElementById('t-inbox').value = t.inboxChannel || '';
+      document.getElementById('t-staff-roles').value = (t.staffRoles || []).join('\n');
       document.getElementById('t-panel-label').value = t.panelLabel || t.label || '';
       document.getElementById('t-panel-order').value = t.panelOrder ?? 99;
       document.getElementById('t-show-panel').checked = t.showInPanel !== false;
@@ -2639,7 +3790,7 @@
       let key = 'new_type';
       while (ticketConfig.types[key]) { n++; key = `new_type_${n}`; }
       ticketConfig.types[key] = {
-        label: 'New Ticket Type', emoji: '🎫', color: '#5865F2', category: 'Support',
+        label: 'New Ticket Type', emoji: 'ðŸŽ«', color: '#5865F2', category: 'Support',
         inboxChannel: 'new-support', showInPanel: true, panelLabel: 'New Ticket Type', panelStyle: 'Primary', panelOrder: 99,
         questions: ['Describe your issue.'], questionShortLabels: ['Issue?'],
         staffButtons: [{ id: 'close', label: 'Close', style: 'Secondary', closeReason: 'Closed by staff' }]
@@ -2707,7 +3858,7 @@
         } else {
           body.innerHTML = stats.recent.map(t => `<tr>
             <td>#${t.id}</td><td>${escHtml(t.ticket_type)}</td><td><span class="badge ${t.status==='open'?'badge-active':'badge-ended'}">${escHtml(t.status)}</span></td>
-            <td>${fmtDate(t.created_at)}</td><td>${escHtml(t.close_reason || '—')}</td></tr>`).join('');
+            <td>${fmtDate(t.created_at)}</td><td>${escHtml(t.close_reason || 'â€”')}</td></tr>`).join('');
         }
       }
     }
@@ -2732,14 +3883,14 @@
 
       if (!report?.rows?.length) {
         periodEl.textContent = report
-          ? `Period: ${report.periodFrom ? fmtDate(report.periodFrom) : 'beginning'} → ${fmtDate(report.periodTo)} · 0 tickets closed`
+          ? `Period: ${report.periodFrom ? fmtDate(report.periodFrom) : 'beginning'} â†’ ${fmtDate(report.periodTo)} Â· 0 tickets closed`
           : 'No report generated yet.';
         head.innerHTML = '';
         body.innerHTML = '<tr><td style="color:var(--muted);padding:14px;">No closed tickets in this period.</td></tr>';
         return;
       }
 
-      periodEl.textContent = `Period: ${report.periodFrom ? fmtDate(report.periodFrom) : 'beginning'} → ${fmtDate(report.periodTo)} · ${report.ticketCount} ticket(s) · next gather starts from ${lastGatheredAt ? fmtDate(lastGatheredAt) : 'now'}`;
+      periodEl.textContent = `Period: ${report.periodFrom ? fmtDate(report.periodFrom) : 'beginning'} â†’ ${fmtDate(report.periodTo)} Â· ${report.ticketCount} ticket(s) Â· next gather starts from ${lastGatheredAt ? fmtDate(lastGatheredAt) : 'now'}`;
 
       const cols = report.columns || [];
       head.innerHTML = `<tr><th>Staff</th><th>Total Tickets</th>${cols.map(c => `<th>${escHtml(c.label)}</th>`).join('')}</tr>`;
@@ -2777,8 +3928,8 @@
     }
 
     function rankBadgeHtml(name, override) {
-      if (!name) return '<span style="color:var(--muted)">—</span>';
-      return `<span class="rank-badge ${rankBadgeClass(name)}${override ? ' override' : ''}">${escHtml(name)}${override ? ' ✎' : ''}</span>`;
+      if (!name) return '<span style="color:var(--muted)">â€”</span>';
+      return `<span class="rank-badge ${rankBadgeClass(name)}${override ? ' override' : ''}">${escHtml(name)}${override ? ' âœŽ' : ''}</span>`;
     }
 
     function filterArchiveList() {
@@ -2797,6 +3948,7 @@
           || m.username?.toLowerCase().includes(q)
           || m.discordId.includes(q)
           || m.steamId?.includes(q)
+          || m.archiveReason?.toLowerCase().includes(q)
         );
       }
       if (!rows.length) {
@@ -2811,13 +3963,14 @@
               <div>
                 <strong>${escHtml(m.displayName || m.username)}</strong><br>
                 <span style="color:var(--muted);font-size:12px;">@${escHtml(m.username)}</span>
+                ${m.archiveReason ? `<br><span style="color:var(--muted);font-size:11px;">${escHtml(m.archiveReason.slice(0, 80))}${m.archiveReason.length > 80 ? 'â€¦' : ''}</span>` : ''}
               </div>
             </div>
           </td>
           <td>${rankBadgeHtml(m.effectiveRank?.name, m.rankOverride)}</td>
           <td style="text-align:center;font-weight:700;">${m.ticketCount ?? 0}</td>
-          <td><span class="badge ${m.status === 'active' ? 'badge-active' : 'badge-ended'}">${m.status === 'active' ? 'Active' : 'Inactive'}</span></td>
-          <td style="font-size:12px;color:var(--muted);">${m.updatedAt ? fmtDate(m.updatedAt) : '—'}</td>
+          <td><span class="badge ${m.status === 'active' ? 'badge-active' : 'badge-ended'}">${m.status === 'active' ? 'Active' : 'Archived'}</span></td>
+          <td style="font-size:12px;color:var(--muted);">${m.archivedAt ? fmtDate(m.archivedAt) : (m.updatedAt ? fmtDate(m.updatedAt) : 'â€”')}</td>
           <td><button type="button" class="btn btn-primary" style="padding:6px 12px;font-size:12px;" onclick="openArchiveDetail('${m.discordId}')">Open</button></td>
         </tr>
       `).join('');
@@ -2826,30 +3979,115 @@
     async function loadStaffArchiveList() {
       const statusEl = document.getElementById('archive-sync-status');
       statusEl.style.color = 'var(--muted)';
-      statusEl.textContent = 'Loading staff archive…';
+      statusEl.textContent = 'Loading staff archiveâ€¦';
       const status = document.getElementById('archive-status-filter')?.value || 'active';
-      const res = await fetch('/api/staffarchive/members?status=' + encodeURIComponent(status));
+      const apiStatus = status === 'archived' ? 'archived' : status;
+      const res = await fetch('/api/staffarchive/members?status=' + encodeURIComponent(apiStatus));
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to load archive');
       archiveMembers = data.members || [];
       archiveRoles = data.roles || [];
-      statusEl.textContent = `${archiveMembers.length} staff member(s) in archive.`;
+      const activeCount = archiveMembers.filter(m => m.status === 'active').length;
+      const archivedCount = archiveMembers.filter(m => m.status === 'archived').length;
+      statusEl.textContent = status === 'all'
+        ? `${archiveMembers.length} total Â· ${activeCount} active Â· ${archivedCount} archived`
+        : `${archiveMembers.length} staff member(s) shown.`;
       renderArchiveList();
     }
 
     async function syncStaffArchive() {
       const statusEl = document.getElementById('archive-sync-status');
-      statusEl.textContent = 'Syncing from Discord…';
+      statusEl.textContent = 'Syncing from Discordâ€¦';
       try {
         const res = await fetch('/api/staffarchive/sync', { method: 'POST' });
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Sync failed');
         statusEl.style.color = data.warning ? 'var(--muted)' : 'var(--green)';
-        statusEl.textContent = `Synced ${data.synced ?? 0} member(s)${data.created ? ` · ${data.created} new` : ''}.${data.warning ? ' ' + data.warning : ''}`;
+        statusEl.textContent = `Synced ${data.synced ?? 0} active member(s)${data.created ? ` Â· ${data.created} new` : ''}${data.archived ? ` Â· ${data.archived} archived` : ''}.${data.warning ? ' ' + data.warning : ''}`;
         await loadStaffArchiveList();
       } catch (e) {
         statusEl.style.color = 'var(--red)';
         statusEl.textContent = 'Error: ' + e.message;
+      }
+    }
+
+    function openAddFormerStaffModal() {
+      const modal = document.getElementById('add-former-staff-modal');
+      const roleSelect = document.getElementById('former-role-id');
+      roleSelect.innerHTML = (archiveRoles.length ? archiveRoles : []).map(r =>
+        `<option value="${r.id}">${escHtml(r.name)}</option>`
+      ).join('');
+      document.getElementById('former-discord-id').value = '';
+      document.getElementById('former-username').value = '';
+      document.getElementById('former-display-name').value = '';
+      document.getElementById('former-steam-id').value = '';
+      document.getElementById('former-reason').value = '';
+      document.getElementById('former-staff-status').textContent = '';
+      modal.style.display = 'flex';
+    }
+
+    function closeAddFormerStaffModal() {
+      document.getElementById('add-former-staff-modal').style.display = 'none';
+    }
+
+    async function submitFormerStaff() {
+      const statusEl = document.getElementById('former-staff-status');
+      const payload = {
+        discordId: document.getElementById('former-discord-id').value.trim(),
+        username: document.getElementById('former-username').value.trim(),
+        displayName: document.getElementById('former-display-name').value.trim(),
+        roleId: document.getElementById('former-role-id').value,
+        steamId: document.getElementById('former-steam-id').value.trim(),
+        reason: document.getElementById('former-reason').value.trim()
+      };
+      statusEl.style.color = 'var(--muted)';
+      statusEl.textContent = 'Savingâ€¦';
+      try {
+        const res = await fetch('/api/staffarchive/members/add-archived', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to add former staff');
+        closeAddFormerStaffModal();
+        document.getElementById('archive-status-filter').value = 'archived';
+        await loadStaffArchiveList();
+        await openArchiveDetail(data.discordId);
+      } catch (e) {
+        statusEl.style.color = 'var(--red)';
+        statusEl.textContent = e.message;
+      }
+    }
+
+    async function archiveStaffMember() {
+      if (!archiveSelectedId) return;
+      const reason = document.getElementById('archive-leave-reason').value.trim();
+      const statusEl = document.getElementById('archive-leave-status');
+      if (!reason) {
+        statusEl.style.color = 'var(--red)';
+        statusEl.textContent = 'Write a leave reason first.';
+        return;
+      }
+      if (!confirm('Archive this staff member? They will move to the archived list but keep all history.')) return;
+      statusEl.style.color = 'var(--muted)';
+      statusEl.textContent = 'Archivingâ€¦';
+      try {
+        const res = await fetch('/api/staffarchive/members/' + encodeURIComponent(archiveSelectedId) + '/archive', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ reason })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Archive failed');
+        statusEl.style.color = 'var(--green)';
+        statusEl.textContent = 'Staff member archived.';
+        document.getElementById('archive-leave-reason').value = '';
+        await loadArchiveDetail(archiveSelectedId);
+        await loadStaffArchiveList();
+      } catch (e) {
+        statusEl.style.color = 'var(--red)';
+        statusEl.textContent = e.message;
       }
     }
 
@@ -2877,14 +4115,14 @@
         const hasRoles = ev.fromRole || ev.toRole;
         const roleChangeHtml = hasRoles ? `
           <div style="font-size:13px;margin:4px 0;">
-            ${ev.fromRole ? escHtml(ev.fromRole.name) : '—'} → ${ev.toRole ? escHtml(ev.toRole.name) : '—'}
+            ${ev.fromRole ? escHtml(ev.fromRole.name) : 'â€”'} â†’ ${ev.toRole ? escHtml(ev.toRole.name) : 'â€”'}
           </div>
         ` : '';
         return `
           <div class="archive-event">
             <div class="ev-title">${escHtml(ev.eventLabel || ev.eventType)}</div>
             ${roleChangeHtml}
-            ${ev.actorName ? `<div style="font-size:12px;margin-top:6px;">Performed by <strong>${escHtml(ev.actorName)}</strong>${ev.source === 'manual' ? ' · Mercy Panel' : ev.source === 'discord' ? ' · Discord' : ev.source === 'game' ? ' · Game Server' : ''}</div>` : ''}
+            ${ev.actorName ? `<div style="font-size:12px;margin-top:6px;">Performed by <strong>${escHtml(ev.actorName)}</strong>${ev.source === 'manual' ? ' Â· Mercy Panel' : ev.source === 'discord' ? ' Â· Discord' : ev.source === 'game' ? ' Â· Game Server' : ''}</div>` : ''}
             ${ev.note ? `<div style="font-size:12px;color:var(--muted);margin-top:6px;">Note: ${escHtml(ev.note)}</div>` : ''}
             <div class="ev-meta">${fmtDate(ev.createdAt)}</div>
           </div>
@@ -2902,7 +4140,7 @@
         <div class="archive-note">
           ${n.title ? `<div class="note-title">${escHtml(n.title)}</div>` : ''}
           <div class="note-body">${escHtml(n.body)}</div>
-          <div class="note-meta">Added by <strong>${escHtml(n.authorName || 'Unknown')}</strong> · ${fmtDate(n.createdAt)}</div>
+          <div class="note-meta">Added by <strong>${escHtml(n.authorName || 'Unknown')}</strong> Â· ${fmtDate(n.createdAt)}</div>
           <button type="button" class="btn btn-danger" style="margin-top:8px;padding:4px 10px;font-size:11px;" onclick="deleteArchiveNote(${n.id})">Delete</button>
         </div>
       `).join('');
@@ -2928,16 +4166,32 @@
           <img src="${m.avatar || ''}" alt="" style="width:64px;height:64px;border-radius:50%;background:var(--border);object-fit:cover;" onerror="this.style.display='none'">
           <div style="flex:1;min-width:200px;">
             <div style="font-size:22px;font-weight:800;">${escHtml(m.displayName || m.username)}</div>
-            <div style="color:var(--muted);font-size:13px;margin-top:4px;">@${escHtml(m.username)} · ${escHtml(m.discordId)}</div>
+            <div style="color:var(--muted);font-size:13px;margin-top:4px;">@${escHtml(m.username)} Â· ${escHtml(m.discordId)}</div>
             ${m.steamId ? `<div style="color:var(--muted);font-size:12px;margin-top:2px;">Steam: ${escHtml(m.steamId)}</div>` : ''}
+            <div style="margin-top:8px;"><span class="badge ${m.status === 'active' ? 'badge-active' : 'badge-ended'}">${m.status === 'active' ? 'Active' : 'Archived'}</span></div>
           </div>
           <div style="text-align:right;">
             ${rankBadgeHtml(m.effectiveRank?.name, m.rankOverride)}
-            <div style="font-size:12px;color:var(--muted);margin-top:8px;">Discord: ${m.discordRole ? escHtml(m.discordRole.name) : '—'}</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:8px;">Discord: ${m.discordRole ? escHtml(m.discordRole.name) : 'â€”'}</div>
             <div style="font-size:14px;font-weight:700;margin-top:8px;">${m.ticketCount ?? 0} tickets closed</div>
           </div>
         </div>
       `;
+
+      const isArchived = m.status === 'archived';
+      document.getElementById('archive-active-actions').style.display = isArchived ? 'none' : 'block';
+      document.getElementById('archive-archived-info').style.display = isArchived ? 'block' : 'none';
+      document.getElementById('archive-override-section').style.display = isArchived ? 'none' : 'block';
+      document.getElementById('archive-steamid-section').style.display = isArchived ? 'none' : 'block';
+      document.getElementById('archive-leave-status').textContent = '';
+
+      if (isArchived) {
+        document.getElementById('archive-archived-summary').innerHTML = `
+          <div style="margin-bottom:8px;"><strong>Archived:</strong> ${m.archivedAt ? fmtDate(m.archivedAt) : 'Unknown'}</div>
+          <div><strong>Leave note:</strong></div>
+          <div style="margin-top:6px;white-space:pre-wrap;">${escHtml(m.archiveReason || 'No leave note recorded yet.')}</div>
+        `;
+      }
 
       renderArchiveEvents(data.events);
       renderArchiveNotes(data.notes);
@@ -2974,7 +4228,7 @@
       const note = document.getElementById('archive-override-note').value.trim();
       const statusEl = document.getElementById('archive-override-status');
       statusEl.style.color = 'var(--muted)';
-      statusEl.textContent = 'Saving…';
+      statusEl.textContent = 'Savingâ€¦';
       try {
         const res = await fetch('/api/staffarchive/members/' + encodeURIComponent(archiveSelectedId) + '/override', {
           method: 'POST',
@@ -2996,21 +4250,18 @@
 
     async function clearArchiveOverride() {
       if (!archiveSelectedId) return;
-      document.getElementById('archive-override-role').value = '';
-      document.getElementById('archive-override-note').value = '';
+      const note = document.getElementById('archive-override-note').value.trim();
       const statusEl = document.getElementById('archive-override-status');
-      statusEl.style.color = 'var(--muted)';
-      statusEl.textContent = 'Clearing…';
       try {
         const res = await fetch('/api/staffarchive/members/' + encodeURIComponent(archiveSelectedId) + '/override', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ clearOverride: true })
+          body: JSON.stringify({ clearOverride: true, note })
         });
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Clear failed');
         statusEl.style.color = 'var(--green)';
-        statusEl.textContent = 'Override cleared — using Discord rank again.';
+        statusEl.textContent = 'Override cleared â€” using Discord rank again.';
         await loadArchiveDetail(archiveSelectedId);
         await loadStaffArchiveList();
       } catch (e) {
@@ -3024,7 +4275,7 @@
       const steamId = document.getElementById('archive-override-steamid').value.trim();
       const statusEl = document.getElementById('archive-steamid-status');
       statusEl.style.color = 'var(--muted)';
-      statusEl.textContent = 'Saving…';
+      statusEl.textContent = 'Savingâ€¦';
       try {
         const res = await fetch('/api/staffarchive/members/' + encodeURIComponent(archiveSelectedId) + '/steamid', {
           method: 'POST',
@@ -3081,7 +4332,7 @@
         ].join(','));
       });
       navigator.clipboard.writeText(lines.join('\n')).then(() => {
-        document.getElementById('staff-stats-period').textContent += ' · CSV copied to clipboard';
+        document.getElementById('staff-stats-period').textContent += ' Â· CSV copied to clipboard';
       }).catch(() => alert('Could not copy to clipboard'));
     }
 
@@ -3153,7 +4404,7 @@
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Setup failed');
         status.style.color = 'var(--green)';
-        status.textContent = 'Setup complete — channels created/verified.';
+        status.textContent = 'Setup complete â€” channels created/verified.';
       } catch (e) {
         status.style.color = 'var(--red)';
         status.textContent = e.message;
@@ -3162,7 +4413,7 @@
 
     showTicketTab('panel');
 
-    // ── Game Server (Pine Hosting) ──
+    // â”€â”€ Game Server (Pine Hosting) â”€â”€
     let gsPollTimer = null;
 
     function consoleLog(text, type = 'sys') {
@@ -3221,8 +4472,8 @@
         const resEl = document.getElementById('gs-resources');
         const r = data.resources;
         if (r) {
-          const uptime = r.uptime ? `${Math.floor(r.uptime / 3600)}h ${Math.floor((r.uptime % 3600) / 60)}m` : '—';
-          resEl.textContent = `CPU ${(r.cpu_absolute || 0).toFixed(1)}% · RAM ${formatBytes(r.memory_bytes)} · Uptime ${uptime}`;
+          const uptime = r.uptime ? `${Math.floor(r.uptime / 3600)}h ${Math.floor((r.uptime % 3600) / 60)}m` : 'â€”';
+          resEl.textContent = `CPU ${(r.cpu_absolute || 0).toFixed(1)}% Â· RAM ${formatBytes(r.memory_bytes)} Â· Uptime ${uptime}`;
         } else {
           resEl.textContent = data.name || '';
         }
@@ -3237,7 +4488,7 @@
       if (signal === 'kill' && !confirm('Kill server immediately? This is forceful and may cause data loss.')) return;
       if (signal === 'stop' && !confirm('Stop the server?')) return;
 
-      consoleLog(`${labels[signal] || signal} server…`, 'sys');
+      consoleLog(`${labels[signal] || signal} serverâ€¦`, 'sys');
       try {
         const res = await fetch('/api/servercontrol/power', {
           method: 'POST',
@@ -3300,7 +4551,7 @@
       startLiveConsoleStream();
     });
 
-    // ── Sub-tab Switcher helper ──
+    // â”€â”€ Sub-tab Switcher helper â”€â”€
     function switchSubTab(pageId, tabId) {
       if (localBackupsInterval) {
         clearInterval(localBackupsInterval);
@@ -3329,7 +4580,7 @@
       }
     }
 
-    // ── WebSocket Console Stream ──
+    // â”€â”€ WebSocket Console Stream â”€â”€
     let consoleWs = null;
     async function startLiveConsoleStream() {
       const serverId = getSelectedGameServerId();
@@ -3373,7 +4624,7 @@
       }
     }
 
-    // ── Backup Management ──
+    // â”€â”€ Backup Management â”€â”€
     async function loadBackups() {
       const tbody = document.getElementById('gs-backups-body');
       if (!tbody) return;
@@ -3464,7 +4715,7 @@
       }
     }
 
-    // ── Local VPS Backups ──
+    // â”€â”€ Local VPS Backups â”€â”€
     async function archiveToLocal(backupId, backupName) {
       const serverId = getSelectedGameServerId();
       try {
@@ -3509,7 +4760,7 @@
           html += `
             <tr style="background: rgba(255, 102, 0, 0.05);">
               <td><strong>${escHtml(p.name)}</strong><br/><small style="color:var(--muted)">Archiving in background...</small></td>
-              <td>—</td>
+              <td>â€”</td>
               <td>${statusText}</td>
               <td style="text-align:right">
                 <button class="btn btn-sm" disabled style="background:var(--surface); border:1px solid var(--border); color:var(--muted);">In Progress</button>
@@ -3573,7 +4824,7 @@
       localBackupsInterval = setInterval(loadLocalBackups, 4000);
     }
 
-    // ── Wipe Assistant ──
+    // â”€â”€ Wipe Assistant â”€â”€
     async function executeWipe() {
       if (!confirm('WARNING: This will stop the server, delete selected files, and restart it. Are you absolutely sure?')) return;
       const statusEl = document.getElementById('wipe-status');
@@ -3715,7 +4966,7 @@
       }
     }
 
-    // ── Oxide Plugins ──
+    // â”€â”€ Oxide Plugins â”€â”€
     async function loadPlugins() {
       const tbody = document.getElementById('gs-plugins-body');
       if (!tbody) return;
@@ -3766,7 +5017,7 @@
       }
     }
 
-    // ── Online Players ──
+    // â”€â”€ Online Players â”€â”€
     async function loadOnlinePlayers() {
       const tbody = document.getElementById('gs-players-body');
       if (!tbody) return;
@@ -3839,7 +5090,7 @@
       }
     }
 
-    // ── Scheduled Announcements ──
+    // â”€â”€ Scheduled Announcements â”€â”€
     async function loadScheduledAnnouncements() {
       const tbody = document.getElementById('sched-list-body');
       if (!tbody) return;
@@ -3918,7 +5169,7 @@
       }
     }
 
-    // ── Ticket Viewer Tab ──
+    // â”€â”€ Ticket Viewer Tab â”€â”€
     async function loadTicketsList() {
       const tbody = document.getElementById('tickets-list-body');
       if (!tbody) return;
@@ -3933,7 +5184,7 @@
         }
         tbody.innerHTML = tickets.map(t => {
           const dateStr = fmtDate(t.created_at);
-          let claimTimeStr = '—';
+          let claimTimeStr = 'â€”';
           if (t.claimed_at) {
               const diffMs = new Date(t.claimed_at) - new Date(t.created_at);
               if (diffMs > 0) {
@@ -3953,7 +5204,7 @@
               <td>#${t.id}</td>
               <td>${escHtml(t.ticket_type)}</td>
               <td>${escHtml(t.discord_id)}</td>
-              <td><code>${escHtml(t.steam_id || '—')}</code></td>
+              <td><code>${escHtml(t.steam_id || 'â€”')}</code></td>
               <td><span class="badge ${statusClass}">${escHtml(t.status)}</span></td>
               <td>${dateStr}</td>
               <td>${claimTimeStr}</td>
@@ -3979,7 +5230,6 @@
         });
         if (!res.ok) throw new Error('Failed to update ignore status');
         loadTicketsList();
-        // Optional: refresh stats
         if (typeof loadStats === 'function') loadStats();
       } catch (e) {
         alert(e.message);
@@ -3987,7 +5237,10 @@
     }
 
     async function viewTicketTranscript(id) {
-      document.getElementById('ticket-transcript-area').style.display = 'block';
+      const area = document.getElementById('ticket-transcript-area');
+      area.style.display = 'block';
+      area.scrollIntoView({ behavior: 'smooth' });
+      
       document.getElementById('transcript-ticket-id').textContent = id;
       const qaBox = document.getElementById('transcript-qa-box');
       const msgBox = document.getElementById('transcript-messages-box');
@@ -4003,7 +5256,7 @@
         const ticket = data.ticket;
         const messages = data.messages || [];
         
-        let answersHtml = `<strong>Discord User:</strong> ${escHtml(ticket.discord_id)} | <strong>Steam ID:</strong> ${escHtml(ticket.steam_id || '—')}<br/>`;
+        let answersHtml = `<strong>Discord User:</strong> ${escHtml(ticket.discord_id)} | <strong>Steam ID:</strong> ${escHtml(ticket.steam_id || 'â€”')}<br/>`;
         if (ticket.answers) {
           try {
             const parsed = JSON.parse(ticket.answers);
@@ -4027,7 +5280,7 @@
             return `
               <div style="margin-bottom:12px;">
                 <div style="color:var(--muted); font-size:11px;">
-                  <strong style="color:var(--accent);">${escHtml(m.author_name)}</strong>${isBot} (${escHtml(m.author_id)}) · ${timeStr}
+                  <strong style="color:var(--accent);">${escHtml(m.author_name)}</strong>${isBot} (${escHtml(m.author_id)}) Â· ${timeStr}
                 </div>
                 <div style="background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); padding:4px 8px; margin-top:2px; white-space:pre-wrap;">${escHtml(m.content)}</div>
               </div>
@@ -4037,6 +5290,7 @@
       } catch (e) {
         qaBox.innerHTML = `<span style="color:var(--red)">${escHtml(e.message)}</span>`;
         msgBox.innerHTML = '';
+        alert('Could not load ticket transcript: ' + e.message);
       }
     }
 
@@ -4044,7 +5298,7 @@
       document.getElementById('ticket-transcript-area').style.display = 'none';
     }
 
-    // ── Player Reports ──
+    // â”€â”€ Player Reports â”€â”€
     async function loadReportsList() {
       const tbody = document.getElementById('reports-list-body');
       if (!tbody) return;
@@ -4066,7 +5320,7 @@
               <td>#${t.id}</td>
               <td>${escHtml(t.ticket_type)}</td>
               <td>${escHtml(t.discord_id)}</td>
-              <td><code>${escHtml(t.steam_id || '—')}</code></td>
+              <td><code>${escHtml(t.steam_id || 'â€”')}</code></td>
               <td><span class="badge ${statusClass}">${escHtml(t.status)}</span></td>
               <td>${dateStr}</td>
               <td style="text-align:right">
@@ -4097,7 +5351,7 @@
         const ticket = data.ticket;
         const messages = data.messages || [];
         
-        let answersHtml = `<strong>Reporter:</strong> ${escHtml(ticket.discord_id)} | <strong>Reported Steam ID:</strong> ${escHtml(ticket.steam_id || '—')}<br/>`;
+        let answersHtml = `<strong>Reporter:</strong> ${escHtml(ticket.discord_id)} | <strong>Reported Steam ID:</strong> ${escHtml(ticket.steam_id || 'â€”')}<br/>`;
         if (ticket.answers) {
           try {
             const parsed = JSON.parse(ticket.answers);
@@ -4121,7 +5375,7 @@
             return `
               <div style="margin-bottom:12px;">
                 <div style="color:var(--muted); font-size:11px;">
-                  <strong style="color:var(--accent);">${escHtml(m.author_name)}</strong>${isBot} (${escHtml(m.author_id)}) · ${timeStr}
+                  <strong style="color:var(--accent);">${escHtml(m.author_name)}</strong>${isBot} (${escHtml(m.author_id)}) Â· ${timeStr}
                 </div>
                 <div style="background:rgba(255,255,255,0.03); border-left:2px solid var(--accent); padding:4px 8px; margin-top:2px; white-space:pre-wrap;">${escHtml(m.content)}</div>
               </div>
@@ -4138,7 +5392,7 @@
       document.getElementById('report-transcript-area').style.display = 'none';
     }
 
-    // ── Bot Settings & Sync ──
+    // â”€â”€ Bot Settings & Sync â”€â”€
     async function loadPresenceSettings() {
       try {
         const res = await fetch('/api/tickets/presence');
@@ -4193,7 +5447,7 @@
       }
     }
 
-    // ── Staff Logs ──
+    // â”€â”€ Staff Logs â”€â”€
     let allStaffLogs = [];
 
     async function loadStaffLogs() {
@@ -4239,10 +5493,10 @@
 
       tbody.innerHTML = filtered.map(log => {
         const timeStr = fmtDate(log.createdAt);
-        const avatarUrl = log.steamId 
+        const avatarUrl = log.steamId
           ? `/api/staffarchive/steam-avatar/${log.steamId}`
-          : (log.avatar && log.avatar.startsWith('http') ? log.avatar : 
-             (log.avatar ? `https://cdn.discordapp.com/avatars/${log.discordId}/${log.avatar}.png` : 'https://cdn.discordapp.com/embed/avatars/0.png'));
+          : (log.avatar && log.avatar.startsWith('http') ? log.avatar
+            : (log.avatar ? `https://cdn.discordapp.com/avatars/${log.discordId}/${log.avatar}.png` : 'https://cdn.discordapp.com/embed/avatars/0.png'));
           
         let typeBadgeClass = 'badge-active';
         if (log.eventType === 'login') typeBadgeClass = 'badge-active';
@@ -4255,7 +5509,7 @@
             <td style="white-space:nowrap;">${timeStr}</td>
             <td>
               <div style="display:flex;align-items:center;gap:8px;">
-                <img src="${avatarUrl}" style="width:24px;height:24px;border-radius:50%;background:var(--border);">
+                <img src="${avatarUrl}" style="width:24px;height:24px;border-radius:50%;background:var(--border);object-fit:cover;" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'">
                 <div>
                   <strong>${escHtml(log.actorName)}</strong>
                   <br/><small style="color:var(--muted);">${escHtml(log.roleName)}</small>
@@ -4269,24 +5523,23 @@
       }).join('');
     }
 
-    // ── Wipe Planner Logic ──
+        // ── Wipe Planner Logic ──
     async function initWipePlannerPage() {
       try {
         const res = await fetch('/api/servercontrol/servers');
         const servers = await res.json();
         const sel = document.getElementById('wipeplanner-server-select');
         if (sel) {
-          sel.innerHTML = servers.map(s => `<option value="${s.id}">${s.name} (${s.ptero_id})</option>`).join('');
+          sel.innerHTML = servers.map(s => <option value=" + s.id + "> + s.name +  ( + s.ptero_id + )</option>).join('');
         }
         
-        // Default vote start to now, and wipe time to tomorrow (24h later)
         const now = new Date();
         const localNowISO = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
         const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
         const localTomorrowISO = new Date(tomorrow.getTime() - tomorrow.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
         
-        document.getElementById('wipeplanner-vote-start').value = localNowISO;
         document.getElementById('wipeplanner-wipe-time').value = localTomorrowISO;
+        document.getElementById('wipeplanner-vote-lead').value = 24;
         
         await loadWipeSchedules();
       } catch(e) {
@@ -4297,14 +5550,14 @@
     async function loadWipeSchedules() {
       const tbody = document.getElementById('wipeplanner-list-body');
       if (!tbody) return;
-      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; color:var(--muted);">Loading wipe schedules...</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:var(--muted);">Loading wipe schedules...</td></tr>';
       try {
         const res = await fetch('/api/wipeplanner/list');
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Failed to fetch schedules');
         
         if (data.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; color:var(--muted);">No schedules configured.</td></tr>';
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:var(--muted);">No schedules configured.</td></tr>';
           return;
         }
 
@@ -4317,60 +5570,51 @@
           else if (s.status === 'completed') { statusColor = 'var(--green)'; statusBg = 'rgba(0,232,122,0.15)'; }
           else if (s.status === 'failed') { statusColor = 'var(--red)'; statusBg = 'rgba(255,68,85,0.15)'; }
 
-          let details = '';
-          if (s.status === 'failed' && s.error_message) {
-            details = `<span style="color:var(--red); font-size:11px;">Error: ${escHtml(s.error_message)}</span>`;
-          } else if (s.status === 'active_vote' && s.vote_id) {
-            details = `<span style="color:var(--muted); font-size:11px;">Vote ID: #${s.vote_id}</span>`;
-          } else {
-            const params = [];
-            if (s.wipe_map) params.push('Map');
-            if (s.wipe_bp) params.push('BP');
-            if (s.wipe_deaths) params.push('Deaths');
-            details = `<span style="color:var(--muted); font-size:11px;">Wiping: ${params.join(', ') || 'None'}</span>`;
-          }
+          const repeatTxt = s.repeat_interval_days > 0 ? '🔄 Biweekly' : 'One-time';
+          const cycleTxt = '#' + (s.cycle_count || 1);
 
-          const showCancel = ['pending_vote', 'active_vote', 'failed'].includes(s.status);
-          const actionBtn = showCancel 
-            ? `<button class="btn btn-danger" style="padding:4px 8px; font-size:11px;" onclick="deleteWipeSchedule(${s.id})">Cancel</button>` 
-            : '—';
-
-          return `
-            <tr>
-              <td><strong>${escHtml(s.server_name || 'Server #' + s.server_id)}</strong></td>
-              <td style="white-space:nowrap;">${fmtDate(s.vote_start_time)}</td>
-              <td style="white-space:nowrap;">${fmtDate(s.wipe_time)}</td>
-              <td><span class="badge" style="background:${statusBg}; color:${statusColor}">${escHtml(s.status)}</span></td>
-              <td>${details}</td>
-              <td style="text-align:right">${actionBtn}</td>
+          return 
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:10px;"> + escHtml(s.server_name) + </td>
+              <td style="padding:10px;"> + fmtDate(s.vote_start_time) + <br><span style="font-size:11px; color:var(--muted);"> + timeAgo(s.vote_start_time) + </span></td>
+              <td style="padding:10px; font-weight:600; color:white;"> + fmtDate(s.wipe_time) + <br><span style="font-size:11px; color:var(--accent2);"> + timeAgo(s.wipe_time) + </span></td>
+              <td style="padding:10px;"> + repeatTxt + </td>
+              <td style="padding:10px;">
+                <span style="display:inline-block; padding:4px 8px; border-radius:4px; font-size:11px; font-weight:600; background: + statusBg + ; color: + statusColor + ;">
+                   + s.status.replace('_', ' ').toUpperCase() + 
+                </span>
+              </td>
+              <td style="padding:10px; color:var(--muted);"> + cycleTxt + </td>
+              <td style="padding:10px; text-align:right;">
+                <button class="btn btn-sm btn-danger" onclick="deleteWipeSchedule( + s.id + )">Cancel</button>
+              </td>
             </tr>
-          `;
+          ;
         }).join('');
       } catch (e) {
-        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color:var(--red);">${escHtml(e.message)}</td></tr>`;
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:var(--red);">Error: ' + e.message + '</td></tr>';
       }
     }
 
     async function scheduleWipe() {
       const serverId = parseInt(document.getElementById('wipeplanner-server-select').value, 10);
-      const voteStartRaw = document.getElementById('wipeplanner-vote-start').value;
       const wipeTimeRaw = document.getElementById('wipeplanner-wipe-time').value;
+      const voteLeadHours = parseInt(document.getElementById('wipeplanner-vote-lead').value, 10);
       
+      const isBiweekly = document.getElementById('wipeplanner-biweekly').checked;
+      const repeatIntervalDays = isBiweekly ? 14 : 0;
+
       const wipeMap = document.getElementById('wipeplanner-wipe-map').checked;
       const wipeBp = document.getElementById('wipeplanner-wipe-bp').checked;
       const wipeDeaths = document.getElementById('wipeplanner-wipe-deaths').checked;
       const wipeAnnounce = document.getElementById('wipeplanner-announce').checked;
 
       const statusEl = document.getElementById('wipeplanner-status');
-      if (!serverId || !voteStartRaw || !wipeTimeRaw) {
+      if (!serverId || !wipeTimeRaw || !voteLeadHours) {
         statusEl.style.color = 'var(--red)';
-        statusEl.textContent = 'Server and all times are required!';
+        statusEl.textContent = 'Please select a server, wipe time, and vote lead hours.';
         return;
       }
-
-      // Convert local inputs to ISO strings
-      const voteStartTime = new Date(voteStartRaw).toISOString();
-      const wipeTime = new Date(wipeTimeRaw).toISOString();
 
       statusEl.style.color = 'var(--muted)';
       statusEl.textContent = 'Scheduling...';
@@ -4379,40 +5623,48 @@
         const res = await fetch('/api/wipeplanner/schedule', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ serverId, voteStartTime, wipeTime, wipeMap, wipeBp, wipeDeaths, wipeAnnounce })
+          body: JSON.stringify({ 
+            serverId, 
+            wipeTime: new Date(wipeTimeRaw).toISOString(),
+            voteLeadHours,
+            repeatIntervalDays,
+            wipeMap, 
+            wipeBp, 
+            wipeDeaths, 
+            wipeAnnounce 
+          })
         });
         const data = await res.json();
         if (res.ok) {
           statusEl.style.color = 'var(--green)';
-          statusEl.textContent = 'Successfully scheduled wipe!';
-          setTimeout(() => statusEl.textContent = '', 3000);
+          statusEl.textContent = 'Wipe scheduled successfully!';
           await loadWipeSchedules();
         } else {
           statusEl.style.color = 'var(--red)';
-          statusEl.textContent = data.error || 'Failed to schedule wipe';
+          statusEl.textContent = 'Error: ' + data.error;
         }
       } catch (e) {
         statusEl.style.color = 'var(--red)';
-        statusEl.textContent = e.message;
+        statusEl.textContent = 'Error: ' + e.message;
       }
     }
 
     async function deleteWipeSchedule(id) {
       if (!confirm('Are you sure you want to cancel and delete this scheduled wipe?')) return;
       try {
-        const res = await fetch(`/api/wipeplanner/${id}`, { method: 'DELETE' });
+        const res = await fetch('/api/wipeplanner/' + id, { method: 'DELETE' });
         if (res.ok) {
           await loadWipeSchedules();
         } else {
           const data = await res.json();
-          alert('Error cancelling schedule: ' + (data.error || 'Unknown error'));
+          alert('Failed to delete: ' + (data.error || 'Unknown error'));
         }
       } catch (e) {
-        alert('Network error: ' + e.message);
+        alert('Error: ' + e.message);
       }
     }
 
-    // ── Server Settings Logic ──
+// â”€â”€ Server Settings Logic â”€â”€
     async function initServerSettingsPage() {
       try {
         const res = await fetch('/api/servercontrol/servers');
@@ -4467,7 +5719,114 @@
       }
     }
 
-    // ── AI Chat Assistant Logic ──
+    // â”€â”€ Word Filter â”€â”€
+    let wfWords = [];
+
+    async function initWordFilterPage() {
+      try {
+        const [settings, words, log] = await Promise.all([
+          apiFetch('/api/wordfilter/settings'),
+          apiFetch('/api/wordfilter/words'),
+          apiFetch('/api/wordfilter/log')
+        ]);
+        document.getElementById('wf-enabled').checked = !!settings.enabled;
+        document.getElementById('wf-notice-seconds').value = settings.noticeSeconds || 5;
+        document.getElementById('wf-block-message').value = settings.blockMessage || '';
+        document.getElementById('wf-word-count').textContent = settings.wordCount ?? words.length;
+        wfWords = words || [];
+        wfRenderWords();
+        wfRenderLog(log || []);
+      } catch (e) {
+        document.getElementById('wf-words-body').innerHTML = `<tr><td colspan="4" style="padding:16px;color:var(--red);">${escHtml(e.message)}</td></tr>`;
+      }
+    }
+
+    function wfRenderWords() {
+      const tbody = document.getElementById('wf-words-body');
+      const q = (document.getElementById('wf-search')?.value || '').trim().toLowerCase();
+      let rows = wfWords.slice();
+      if (q) rows = rows.filter(w => String(w.word).toLowerCase().includes(q));
+      if (!rows.length) {
+        tbody.innerHTML = '<tr><td colspan="4" style="padding:16px;color:var(--muted);">No words found.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = rows.map(w => `
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 8px;"><code>${escHtml(w.word)}</code></td>
+          <td style="padding:10px 8px;color:var(--muted);">${escHtml(w.added_by || 'â€”')}</td>
+          <td style="padding:10px 8px;color:var(--muted);">${fmtDate(w.created_at)}</td>
+          <td style="padding:10px 8px;text-align:right;">
+            <button class="btn" style="background:var(--surface);border:1px solid var(--border);font-size:12px;padding:6px 10px;" onclick="wfDeleteWord(${w.id})">Remove</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function wfRenderLog(entries) {
+      const el = document.getElementById('wf-log-list');
+      if (!entries.length) {
+        el.textContent = 'No blocks logged yet.';
+        return;
+      }
+      el.innerHTML = entries.slice(0, 50).map(entry => `
+        <div style="padding:8px 0;border-bottom:1px solid var(--border);">
+          <strong>${escHtml(entry.user_tag)}</strong>
+          <span style="color:var(--muted);"> Â· ${fmtDate(entry.created_at)} Â· channel <code>${escHtml(entry.channel_id)}</code></span>
+          <div style="margin-top:4px;color:var(--muted);">Matched: <code>${escHtml(entry.matched_word)}</code></div>
+        </div>
+      `).join('');
+    }
+
+    async function wfSaveSettings() {
+      const msg = document.getElementById('wf-settings-msg');
+      try {
+        await apiFetch('/api/wordfilter/settings', {
+          method: 'PUT',
+          body: JSON.stringify({
+            enabled: document.getElementById('wf-enabled').checked,
+            blockMessage: document.getElementById('wf-block-message').value,
+            noticeSeconds: parseInt(document.getElementById('wf-notice-seconds').value, 10) || 5
+          })
+        });
+        msg.style.color = 'var(--green)';
+        msg.textContent = 'Settings saved.';
+      } catch (e) {
+        msg.style.color = 'var(--red)';
+        msg.textContent = e.message;
+      }
+    }
+
+    async function wfAddWord() {
+      const input = document.getElementById('wf-new-word');
+      const msg = document.getElementById('wf-add-msg');
+      const word = (input.value || '').trim();
+      if (!word) return;
+      try {
+        await apiFetch('/api/wordfilter/words', {
+          method: 'POST',
+          body: JSON.stringify({ word })
+        });
+        input.value = '';
+        msg.style.color = 'var(--green)';
+        msg.textContent = `Added "${word}".`;
+        await initWordFilterPage();
+      } catch (e) {
+        msg.style.color = 'var(--red)';
+        msg.textContent = e.message;
+      }
+    }
+
+    async function wfDeleteWord(id) {
+      if (!confirm('Remove this word from the filter?')) return;
+      try {
+        await apiFetch(`/api/wordfilter/words/${id}`, { method: 'DELETE' });
+        await initWordFilterPage();
+      } catch (e) {
+        alert(e.message);
+      }
+    }
+
+    // â”€â”€ AI Chat Assistant Logic â”€â”€
     let aiChatHistory = [];
     
     function toggleAiChat() {
@@ -4573,11 +5932,297 @@
       }
     }
 
+  // â”€â”€ Ban Approvals â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+  let _bakCopiedKey = '';
+  let _bakOverview = null;
+  let _bakFilter = 'all';
+  let _bakSelectedStaff = '';
+  let _bakSearchTimer = null;
+
+  function bakToggleKeysPanel() {
+    const panel = document.getElementById('bak-keys-panel');
+    const chev = document.getElementById('bak-keys-chevron');
+    panel.classList.toggle('open');
+    chev.textContent = panel.classList.contains('open') ? 'â–¼' : 'â–¶';
+    if (panel.classList.contains('open') && !panel.dataset.loaded) {
+      panel.dataset.loaded = '1';
+      bakLoadKeys();
+    }
+  }
+
+  function bakSetFilter(status) {
+    _bakFilter = status;
+    document.querySelectorAll('.bak-tab').forEach(t => {
+      t.classList.toggle('active', t.dataset.status === status);
+    });
+    document.querySelectorAll('#bak-stats-grid .stat-card.clickable').forEach(c => c.classList.remove('active'));
+    const statEl = document.getElementById('bak-stat-' + (status === 'all' ? 'all' : status));
+    if (statEl) statEl.classList.add('active');
+    bakLoadRequests();
+  }
+
+  function bakSelectStaff(name) {
+    _bakSelectedStaff = _bakSelectedStaff === name ? '' : name;
+    const sel = document.getElementById('bak-staff-filter');
+    if (sel) sel.value = _bakSelectedStaff;
+    bakRenderStaffList();
+    bakLoadRequests();
+  }
+
+  function bakClearStaffFilter() {
+    _bakSelectedStaff = '';
+    const sel = document.getElementById('bak-staff-filter');
+    if (sel) sel.value = '';
+    bakRenderStaffList();
+    bakLoadRequests();
+  }
+
+  function bakStaffFilterChanged() {
+    _bakSelectedStaff = document.getElementById('bak-staff-filter')?.value || '';
+    bakRenderStaffList();
+    bakLoadRequests();
+  }
+
+  function bakDebouncedLoadRequests() {
+    clearTimeout(_bakSearchTimer);
+    _bakSearchTimer = setTimeout(bakLoadRequests, 300);
+  }
+
+  async function bakRefreshAll() {
+    await bakLoadOverview();
+    await bakLoadRequests();
+  }
+
+  async function bakLoadOverview() {
+    try {
+      const res = await fetch('/api/banapprovals/overview');
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to load overview');
+      _bakOverview = data;
+
+      const s = data.stats || {};
+      document.getElementById('bak-stat-total').textContent = s.total ?? 0;
+      document.getElementById('bak-stat-pending-val').textContent = s.pending ?? 0;
+      document.getElementById('bak-stat-approved-val').textContent = s.approved ?? 0;
+      document.getElementById('bak-stat-denied-val').textContent = s.denied ?? 0;
+      document.getElementById('bak-stat-staff').textContent = s.activeStaff ?? 0;
+
+      document.getElementById('bak-tab-all').textContent = `(${s.total ?? 0})`;
+      document.getElementById('bak-tab-pending').textContent = `(${s.pending ?? 0})`;
+      document.getElementById('bak-tab-approved').textContent = `(${s.approved ?? 0})`;
+      document.getElementById('bak-tab-denied').textContent = `(${s.denied ?? 0})`;
+
+      const alert = document.getElementById('bak-pending-alert');
+      if (s.pending > 0) {
+        alert.style.display = 'flex';
+        document.getElementById('bak-pending-alert-title').textContent =
+          `${s.pending} ban request${s.pending === 1 ? '' : 's'} pending review`;
+      } else {
+        alert.style.display = 'none';
+      }
+
+      document.getElementById('bak-staff-count').textContent = `(${data.staff?.length || 0})`;
+
+      const staffSel = document.getElementById('bak-staff-filter');
+      const current = staffSel.value;
+      staffSel.innerHTML = '<option value="">All staff</option>' +
+        (data.staff || []).map(st => `<option value="${escHtml(st.name)}">${escHtml(st.name)}</option>`).join('');
+      staffSel.value = current || _bakSelectedStaff || '';
+
+      bakRenderStaffList();
+    } catch (e) {
+      document.getElementById('bak-staff-list').innerHTML =
+        `<div style="color:var(--red);font-size:13px;">${escHtml(e.message)}</div>`;
+    }
+  }
+
+  function bakRenderStaffList() {
+    const el = document.getElementById('bak-staff-list');
+    const staff = _bakOverview?.staff || [];
+    if (!staff.length) {
+      el.innerHTML = '<div style="color:var(--muted);font-size:13px;">No trial admins yet.</div>';
+      return;
+    }
+
+    el.innerHTML = staff.map(st => {
+      const selected = _bakSelectedStaff === st.name;
+      const rate = st.approvalRate != null ? st.approvalRate : 0;
+      const rateLabel = st.approvalRate != null ? `${st.approvalRate}% approved` : 'No reviews yet';
+      const keyBadge = st.keyActive === false
+        ? '<span class="badge" style="background:rgba(255,68,85,0.15);color:var(--red);">Revoked</span>'
+        : st.keyActive === true
+          ? '<span class="badge badge-active">Active</span>'
+          : '<span class="badge" style="background:rgba(107,114,128,0.2);color:var(--muted);">No key</span>';
+
+      return `
+        <div class="bak-staff-card${selected ? ' selected' : ''}" onclick="bakSelectStaff(${JSON.stringify(st.name)})">
+          <div class="bak-staff-top">
+            <div>
+              <div class="bak-staff-name">${escHtml(st.name)}</div>
+              <div class="bak-staff-meta">${st.discordName ? escHtml(st.discordName) : 'No Discord set'}${st.lastRequestAt ? ' Â· Last: ' + fmtDate(st.lastRequestAt) : ''}</div>
+            </div>
+            ${keyBadge}
+          </div>
+          <div class="bak-mini-stats">
+            <div class="bak-mini-stat"><div class="v">${st.total}</div><div class="l">Total</div></div>
+            <div class="bak-mini-stat"><div class="v" style="color:var(--accent2);">${st.pending}</div><div class="l">Pending</div></div>
+            <div class="bak-mini-stat"><div class="v" style="color:var(--green);">${st.approved}</div><div class="l">Approved</div></div>
+            <div class="bak-mini-stat"><div class="v" style="color:var(--red);">${st.denied}</div><div class="l">Denied</div></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+            <div class="bak-rate-bar" style="flex:1;"><div class="bak-rate-fill" style="width:${rate}%;"></div></div>
+            <span style="font-size:10px;color:var(--muted);white-space:nowrap;">${rateLabel}</span>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  async function bakCreateKey() {
+    const name = document.getElementById('bak-name').value.trim();
+    const discordName = document.getElementById('bak-discord-name').value.trim();
+    const discordId = document.getElementById('bak-discord-id').value.trim();
+    const statusEl = document.getElementById('bak-create-status');
+    const keyBox = document.getElementById('bak-new-key-box');
+
+    if (!name) { statusEl.style.color = 'var(--red)'; statusEl.textContent = 'âš ï¸ Display name is required.'; return; }
+
+    statusEl.textContent = '';
+    keyBox.style.display = 'none';
+
+    try {
+      const res = await fetch('/api/banapprovals/keys', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, discordName, discordId })
+      });
+      const data = await res.json();
+      if (!res.ok) { statusEl.style.color = 'var(--red)'; statusEl.textContent = 'âŒ ' + (data.error || 'Failed'); return; }
+
+      _bakCopiedKey = data.key;
+      document.getElementById('bak-new-key-value').textContent = data.key;
+      keyBox.style.display = 'block';
+      document.getElementById('bak-name').value = '';
+      document.getElementById('bak-discord-name').value = '';
+      document.getElementById('bak-discord-id').value = '';
+      document.getElementById('bak-keys-panel').classList.add('open');
+      document.getElementById('bak-keys-chevron').textContent = 'â–¼';
+      await bakRefreshAll();
+      bakLoadKeys();
+    } catch (e) {
+      statusEl.style.color = 'var(--red)';
+      statusEl.textContent = 'âŒ Network error: ' + e.message;
+    }
+  }
+
+  function bakCopyKey() {
+    if (!_bakCopiedKey) return;
+    navigator.clipboard.writeText(_bakCopiedKey).then(() => {
+      const btn = document.querySelector('#bak-new-key-box button');
+      if (btn) { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 1500); }
+    });
+  }
+
+  async function bakLoadKeys() {
+    const el = document.getElementById('bak-keys-table');
+    try {
+      const keys = _bakOverview?.keys || (await (await fetch('/api/banapprovals/keys')).json());
+      if (!keys.length) { el.innerHTML = '<div style="color:var(--muted);font-size:13px;">No keys yet.</div>'; return; }
+
+      el.innerHTML = `
+        <div class="table-wrap"><table>
+          <thead><tr>
+            <th>Name</th><th>Discord</th><th>Key</th><th>Created</th><th>Last Used</th><th>Status</th><th></th>
+          </tr></thead>
+          <tbody>
+            ${keys.map(k => `
+              <tr>
+                <td style="font-weight:600;">${escHtml(k.name)}</td>
+                <td style="color:var(--muted);">${k.discord_name ? escHtml(k.discord_name) : 'â€”'}${k.discord_id ? `<br><span style="font-size:11px;">${escHtml(k.discord_id)}</span>` : ''}</td>
+                <td style="font-family:monospace;color:var(--muted);">${escHtml(k.key_preview)}</td>
+                <td style="color:var(--muted);">${fmtDate(k.created_at)}</td>
+                <td style="color:var(--muted);">${k.last_used_at ? fmtDate(k.last_used_at) : 'Never'}</td>
+                <td><span class="badge ${k.active ? 'badge-active' : ''}" style="${k.active ? '' : 'background:rgba(255,68,85,0.15);color:var(--red);'}">${k.active ? 'Active' : 'Revoked'}</span></td>
+                <td>${k.active ? `<button class="btn btn-danger" style="font-size:11px;padding:4px 10px;" onclick="bakRevokeKey(${k.id})">Revoke</button>` : ''}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table></div>`;
+    } catch (e) {
+      el.innerHTML = '<div style="color:var(--red);font-size:13px;">Failed to load keys: ' + e.message + '</div>';
+    }
+  }
+
+  async function bakRevokeKey(id) {
+    if (!confirm('Revoke this API key? The Trial Admin will no longer be able to submit ban requests.')) return;
+    await fetch('/api/banapprovals/keys/' + id, { method: 'DELETE' });
+    await bakRefreshAll();
+    bakLoadKeys();
+  }
+
+  async function bakLoadRequests() {
+    const el = document.getElementById('bak-requests-list');
+    const search = document.getElementById('bak-search')?.value.trim() || '';
+    const admin = document.getElementById('bak-staff-filter')?.value || _bakSelectedStaff || '';
+
+    const params = new URLSearchParams({ status: _bakFilter, limit: '100' });
+    if (admin) params.set('admin', admin);
+    if (search) params.set('search', search);
+
+    try {
+      const res = await fetch('/api/banapprovals/requests?' + params);
+      const rows = await res.json();
+      if (!rows.length) {
+        el.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:20px 0;text-align:center;">No requests match your filters.</div>`;
+        return;
+      }
+
+      el.innerHTML = rows.map(r => {
+        const status = (r.status || 'pending').toLowerCase();
+        return `
+          <div class="bak-request-row">
+            <div class="bak-request-top">
+              <div>
+                <div class="bak-request-player">
+                  <a href="${escHtml(r.bm_rcon_link)}" target="_blank">${escHtml(r.player_name || r.bm_id)}</a>
+                </div>
+                <div class="bak-request-sub">
+                  ${escHtml(r.server || 'Unknown server')}
+                  ${r.steam_id ? ' Â· ' + escHtml(r.steam_id) : ''}
+                  Â· Submitted by <strong style="color:var(--text);">${escHtml(r.admin_name || 'Unknown')}</strong>
+                  Â· ${fmtDate(r.created_at)}
+                </div>
+              </div>
+              <span class="bak-status-pill ${status}">${status.charAt(0).toUpperCase() + status.slice(1)}</span>
+            </div>
+            <div class="bak-detail-box">
+              <strong>Ban Request:</strong> ${escHtml(r.reason || 'â€”')}
+              ${r.reviewed_by ? `<br><strong>Reviewed by:</strong> ${escHtml(r.reviewed_by)}${r.reviewed_at ? ' Â· ' + fmtDate(r.reviewed_at) : ''}` : ''}
+              ${status === 'denied' && r.denial_reason ? `<br><strong style="color:var(--red);">Denial Reason:</strong> ${escHtml(r.denial_reason)}` : ''}
+            </div>
+          </div>`;
+      }).join('');
+    } catch (e) {
+      el.innerHTML = '<div style="color:var(--red);font-size:13px;">Failed to load requests: ' + e.message + '</div>';
+    }
+  }
+
+  function escHtml(s) {
+    if (s == null) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function fmtDate(iso) {
+    if (!iso) return 'â€”';
+    const d = new Date(iso + (iso.includes('Z') || iso.includes('+') ? '' : ' UTC'));
+    return d.toLocaleDateString('en-GB') + ' ' + d.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
+  }
+
 </script>
 
   <!-- AI Chat Assistant Bubble -->
   <button class="ai-chat-btn" onclick="toggleAiChat()">
-    <span class="icon">💬</span>
+    <span class="icon">ðŸ’¬</span>
   </button>
 
   <!-- AI Chat Window -->
@@ -4587,14 +6232,17 @@
         <div class="ai-chat-status"></div>
         <span>Mercy AI Assistant</span>
       </div>
-      <button class="ai-chat-close" onclick="toggleAiChat()">×</button>
+      <button class="ai-chat-close" onclick="toggleAiChat()">Ã—</button>
     </div>
     <div class="ai-chat-messages" id="ai-chat-messages"></div>
     <div class="ai-chat-input-area">
       <input type="text" id="ai-chat-input" class="ai-chat-input" placeholder="Ask a question..." onkeydown="if(event.key === 'Enter') sendAiChatMessage()">
-      <button class="ai-chat-send" onclick="sendAiChatMessage()">➔</button>
+      <button class="ai-chat-send" onclick="sendAiChatMessage()">âž”</button>
     </div>
   </div>
 
 </body>
 </html>
+
+
+
