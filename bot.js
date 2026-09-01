@@ -1,5 +1,5 @@
-/**
- * Mercy Rust — General Bot
+﻿/**
+ * Mercy Rust â€” General Bot
  * Modular architecture: add features by creating files in /features/
  */
 require('dotenv').config();
@@ -8,7 +8,7 @@ const path = require('path');
 const fs = require('fs');
 const sqlite3 = require('sqlite3').verbose();
 
-// ─────────────────────── DATABASE ───────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ DATABASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const db = new sqlite3.Database(path.join(__dirname, 'mercy.db'), err => {
     if (err) console.error('[Mercy] DB Error:', err.message);
     else console.log('[Mercy] Database connected.');
@@ -30,7 +30,7 @@ db.serialize(() => {
     )`);
 });
 
-// ─────────────────────── CLIENT ───────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ CLIENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds, 
@@ -41,7 +41,7 @@ const client = new Client({
     partials: [Partials.Message, Partials.Channel]
 });
 
-// ─────────────────────── FEATURE LOADER ───────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ FEATURE LOADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const features = new Map(); // featureName -> module
 const allCommands = [];
 
@@ -66,18 +66,18 @@ async function loadFeatures() {
             // Mount API router right after loading so routes are registered
             if (feature.router) {
                 app.use(`/api/${name}`, feature.router);
-                console.log(`[Mercy] 🌐 Mounted API: /api/${name}`);
+                console.log(`[Mercy] ðŸŒ Mounted API: /api/${name}`);
             }
 
             features.set(name, feature);
-            console.log(`[Mercy] ✅ Loaded feature: ${name}`);
+            console.log(`[Mercy] âœ… Loaded feature: ${name}`);
         } catch (e) {
-            console.error(`[Mercy] ❌ Failed to load feature ${file}:`, e.message);
+            console.error(`[Mercy] âŒ Failed to load feature ${file}:`, e.message);
         }
     }
 }
 
-// ─────────────────────── READY ───────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ READY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 client.once('ready', async () => {
     console.log(`[Mercy] Logged in as ${client.user.tag}`);
 
@@ -94,7 +94,7 @@ client.once('ready', async () => {
             console.log(`[Mercy] Registered ${allCommands.length} slash command(s).`);
         } catch (e) {
             if (e.code === 50001) {
-                console.warn('[Mercy] ⚠️  Bot is not in the guild yet — invite it first, then restart.');
+                console.warn('[Mercy] âš ï¸  Bot is not in the guild yet â€” invite it first, then restart.');
                 console.warn('[Mercy] Invite: https://discord.com/oauth2/authorize?client_id=' + process.env.MERCY_CLIENT_ID + '&permissions=8&scope=bot%20applications.commands');
             } else {
                 console.error('[Mercy] Failed to register commands:', e.message);
@@ -108,7 +108,7 @@ client.once('ready', async () => {
     console.log('[Mercy] Bot is ready!');
 });
 
-// ─────────────────────── MEMBER JOIN ───────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ MEMBER JOIN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 client.on('guildMemberAdd', async member => {
     try {
         const roleId = '1514070446700494950'; // Member role
@@ -122,7 +122,7 @@ client.on('guildMemberAdd', async member => {
     }
 });
 
-// ─────────────────────── INTERACTION ROUTER ───────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ INTERACTION ROUTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 client.on('interactionCreate', async interaction => {
     for (const [name, feature] of features) {
         if (typeof feature.handleInteraction === 'function') {
@@ -167,7 +167,7 @@ client.on('messageCreate', async message => {
     }
 });
 
-// ─────────────────────── DASHBOARD ───────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ DASHBOARD â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const express = require('express');
 const session = require('express-session');
 const SQLiteStore = require('connect-sqlite3')(session);
@@ -230,7 +230,7 @@ app.get('/api/auth/callback', async (req, res) => {
             headers: { Authorization: `Bearer ${tokenRes.data.access_token}` }
         });
 
-        const whitelist = (process.env.._WHITELIST || '').split(',');
+        const whitelist = (process.env.MERCY_DASHBOARD_WHITELIST || '').split(',');
         if (!whitelist.includes(userRes.data.id)) {
             return res.status(403).send('Access Denied: You are not whitelisted for the dashboard.');
         }
@@ -323,9 +323,9 @@ app.get('/api/events', async (req, res) => {
 
 // Feature API routes are mounted inside loadFeatures() after each feature loads.
 
-const PORT = process.env.._PORT || 3006;
+const PORT = process.env.MERCY_DASHBOARD_PORT || 3006;
 const HOST = process.env.MERCY_BIND_HOST || '0.0.0.0';
 app.listen(PORT, HOST, () => console.log(`[Mercy] Dashboard on ${publicUrl} (bind ${HOST}:${PORT})`));
 
-// ─────────────────────── LOGIN ───────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ LOGIN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 client.login(process.env.MERCY_BOT_TOKEN);
