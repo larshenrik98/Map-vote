@@ -109,6 +109,77 @@ async function closeVote(vote, announce = true) {
 
     // Update Pine Hosting Pterodactyl Panel automatically
     await updatePterodactylStartupVariables(winnerMap.seed, winnerMap.size, winnerMap.downloadUrl, vote.server_id);
+
+    // Automatically trigger restart and poll for wipe completion!
+    pollPterodactylForBoot(vote.server_id, vote.id).catch(err => console.error('[MapVote] Polling error:', err));
+}
+
+async function pollPterodactylForBoot(serverId, voteId) {
+    const pKey = process.env.PTERODACTYL_API_KEY;
+    const pUrl = process.env.PTERODACTYL_PANEL_URL;
+    
+    const serverObj = await _dbGet('SELECT * FROM rust_servers WHERE id = ?', [serverId]).catch(() => null);
+    if (!serverObj) return;
+    const pId = serverObj.ptero_id || process.env.PTERODACTYL_SERVER_ID;
+
+    if (!pKey || !pId || !pUrl) {
+        console.log('[MapVote Poller] Pterodactyl credentials missing, cannot auto-restart.');
+        return;
+    }
+
+    const axios = require('axios');
+    const headers = {
+        'Authorization': `Bearer ${pKey}`,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    };
+
+    // 1. Send Power Action: Restart
+    try {
+        console.log(`[MapVote Poller] Sending restart command to Pterodactyl for server ${pId}...`);
+        await axios.post(`${pUrl}/api/client/servers/${pId}/power`, { signal: 'restart' }, { headers });
+    } catch(e) {
+        console.error('[MapVote Poller] Failed to restart server:', e.response?.data || e.message);
+        return;
+    }
+
+    // 2. Poll every 10 seconds for 'running' state
+    let attempts = 0;
+    const maxAttempts = 120; // 20 minutes timeout
+    const interval = setInterval(async () => {
+        attempts++;
+        if (attempts > maxAttempts) {
+            console.log('[MapVote Poller] Timeout waiting for server to boot.');
+            clearInterval(interval);
+            return;
+        }
+
+        try {
+            const res = await axios.get(`${pUrl}/api/client/servers/${pId}/resources`, { headers });
+            const state = res.data?.attributes?.current_state;
+            
+            if (state === 'running') {
+                console.log(`[MapVote Poller] Server ${pId} is now RUNNING! Triggering announcement.`);
+                clearInterval(interval);
+                
+                // Trigger wipe announcement
+                const vote = await _dbGet('SELECT * FROM map_votes WHERE id = ? AND (wipe_announced = 0 OR wipe_announced IS NULL)', [voteId]).catch(() => null);
+                if (vote) {
+                    await _dbRun('UPDATE map_votes SET wipe_announced = 1 WHERE id = ?', [vote.id]).catch(() => {});
+                    const channel = await _client.channels.fetch(process.env.MERCY_WIPEFEED_CHANNEL_ID || '').catch(()=>null);
+                    if (channel) {
+                        const embed = await buildWipeEmbed(_client, serverObj, _dbGet);
+                        await channel.send({ content: '@everyone', embeds: [embed] });
+                        console.log(`[MapVote Poller] Wipe announced for ${serverObj.name} on Discord.`);
+                    }
+                }
+            } else {
+                console.log(`[MapVote Poller] Server state: ${state}... waiting.`);
+            }
+        } catch(e) {
+            console.error('[MapVote Poller] Polling error:', e.message);
+        }
+    }, 10000);
 }
 
 async function updatePterodactylStartupVariables(seed, size, mapUrl, serverId) {
